@@ -20,6 +20,11 @@ Demo is a consumer. Runtime execution engines belong in AIKernel.Control.
 External Capability modules belong in AIKernel.Tools or dedicated Capability
 repositories.
 
+Release notes:
+
+- [English](RELEASE_NOTES.md)
+- [日本語](RELEASE_NOTES-ja.md)
+
 ## Projects
 
 - `AIKernel.Demo.Console` - minimal CLI demo for one inference pipeline using
