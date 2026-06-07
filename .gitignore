@@ -6,3 +6,4 @@ artifacts/
 TestResults/
 *.user
 *.suo
+/src/AIKernel.Demo.WebApi/Properties/launchSettings.json
