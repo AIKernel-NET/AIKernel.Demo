@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <ItemGroup>
+    <ProjectReference Include="..\AIKernel.Demo.Pipelines\AIKernel.Demo.Pipelines.csproj" />
+    <ProjectReference Include="..\AIKernel.Demo.ReplayInspector\AIKernel.Demo.ReplayInspector.csproj" />
+  </ItemGroup>
+</Project>
