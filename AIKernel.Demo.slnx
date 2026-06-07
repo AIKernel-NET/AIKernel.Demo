@@ -7,4 +7,5 @@
   <Project Path="src/AIKernel.Demo.Pipelines/AIKernel.Demo.Pipelines.csproj" />
   <Project Path="src/AIKernel.Demo.PDP/AIKernel.Demo.PDP.csproj" />
   <Project Path="src/AIKernel.Demo.ReplayInspector/AIKernel.Demo.ReplayInspector.csproj" />
+  <Project Path="tests/AIKernel.Demo.Tests/AIKernel.Demo.Tests.csproj" />
 </Solution>

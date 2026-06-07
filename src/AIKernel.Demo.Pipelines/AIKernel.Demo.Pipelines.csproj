@@ -1,5 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
+    <PackageReference Include="AIKernel.Dtos" Version="$(AIKernelPackageVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AIKernel.Demo.PDP\AIKernel.Demo.PDP.csproj" />
     <ProjectReference Include="..\AIKernel.Demo.Providers.Mock\AIKernel.Demo.Providers.Mock.csproj" />
   </ItemGroup>

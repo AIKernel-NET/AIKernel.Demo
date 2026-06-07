@@ -4,4 +4,5 @@ public sealed record DemoPipelineRun(
     string PipelineId,
     string Decision,
     string ReplayHash,
-    int StepCount);
+    int StepCount,
+    DemoContractAlignment ContractAlignment);

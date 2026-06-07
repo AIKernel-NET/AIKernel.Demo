@@ -53,3 +53,13 @@ The demos intentionally mirror the Core design decisions: pipelines are DAGs
 controlled deterministically by the TaskManager, Providers declare replaceable
 Capabilities, LLMs propose while PDP makes final decisions, and replay captures
 all material needed to rerun the same execution.
+
+The initial 0.1.0 prototype includes a contract-alignment smoke path in
+`AIKernel.Demo.Pipelines`: it constructs routing data through
+`AIKernel.Dtos.Routing.KernelProviderRoutingDecision` and DSL semantic IR through
+`AIKernel.Dtos.Dsl`. Demo code remains a consumer of AIKernel.NET contracts and
+does not depend on Core internal DSL/History runtime types.
+
+During 0.1.0 prototype development, `AIKernelPackageVersion` may point to a
+local build such as `0.1.0.2` to avoid NuGet cache collisions. Public release
+builds should align the package family to the fixed 0.1.0 release version.

@@ -13,6 +13,7 @@ app.MapGet("/demo/pipeline", () =>
     {
         run.PipelineId,
         run.Decision,
+        run.ContractAlignment,
         run.StepCount,
         Replay = ReplaySummaryFormatter.Format(run.ReplayHash, run.StepCount)
     });
