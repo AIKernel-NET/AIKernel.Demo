@@ -1,5 +1,7 @@
 # Demo Pipelines
 
+[日本語](index-ja.md)
+
 AIKernel.Demo.Pipelines provides purpose-specific DAG examples:
 
 - `ChatPipeline` - normalized user input, structure phase, Provider call, output

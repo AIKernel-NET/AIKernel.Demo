@@ -1,5 +1,7 @@
 # AIKernel.Demo Architecture
 
+[日本語](index-ja.md)
+
 AIKernel.Demo is a demonstration workspace, not a contract owner. It composes
 published AIKernel packages and external Capability modules to show the
 Knowledge OS execution model in console, API-host, and browser-facing forms.
