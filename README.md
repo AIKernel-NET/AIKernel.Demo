@@ -44,6 +44,9 @@ repositories.
 - `AIKernel.Demo.ReplayInspector` - deterministic replay inspection surface for
   ReplayLog loading, provider selection replay, PromptRules version comparison,
   and ExecutionState diffs.
+- `AIKernel.Demo.Python` - Python teaching/demo port of the same contract
+  semantics: DSL parsing, monad-style pipelines, VFS snapshots, semantic
+  deltas, and deterministic replay.
 
 ## Documentation
 
@@ -61,6 +64,7 @@ Japanese:
 dotnet build AIKernel.Demo.slnx
 dotnet run --project src/AIKernel.Demo.Console/AIKernel.Demo.Console.csproj
 dotnet run --project src/AIKernel.Demo.WebApi/AIKernel.Demo.WebApi.csproj
+py -m pytest tests/AIKernel.Demo.Python.Tests
 ```
 
 Common project properties are centralized in `Directory.Build.props`.

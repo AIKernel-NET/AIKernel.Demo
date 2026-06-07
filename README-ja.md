@@ -38,6 +38,8 @@ Demo は利用者側です。Runtime execution engine は AIKernel.Control に�
   audit log の PDP visualization。
 - `AIKernel.Demo.ReplayInspector` - ReplayLog loading、provider selection replay、
   PromptRules version comparison、ExecutionState diff の deterministic replay inspector。
+- `AIKernel.Demo.Python` - 同じ contract semantics を Python で再現する教材デモ。
+  DSL parsing、モナド風 pipeline、VFS snapshot、semantic delta、deterministic replay を扱います。
 
 ## ドキュメント
 
@@ -50,6 +52,7 @@ Demo は利用者側です。Runtime execution engine は AIKernel.Control に�
 dotnet build AIKernel.Demo.slnx
 dotnet run --project src/AIKernel.Demo.Console/AIKernel.Demo.Console.csproj
 dotnet run --project src/AIKernel.Demo.WebApi/AIKernel.Demo.WebApi.csproj
+py -m pytest tests/AIKernel.Demo.Python.Tests
 ```
 
 共通 project property は `Directory.Build.props` に集約されています。
