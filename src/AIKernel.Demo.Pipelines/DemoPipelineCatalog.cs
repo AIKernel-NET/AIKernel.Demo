@@ -1,5 +1,4 @@
 using AIKernel.Demo.PDP;
-using AIKernel.Demo.Providers.Mock;
 using AIKernel.Dtos.Dsl;
 using AIKernel.Dtos.Routing;
 
@@ -10,8 +9,6 @@ public static class DemoPipelineCatalog
     public static DemoPipelineRun CreateDefaultRun()
     {
         var decision = DemoPolicyDecision.Allow("demo-readonly");
-        var provider = new MockProvider();
-        var response = provider.Generate("hello-rom");
         var routing = new KernelProviderRoutingDecision(
             "demo.mock",
             "mock-fixed",
@@ -24,18 +21,17 @@ public static class DemoPipelineCatalog
             new StepNode("provider"),
             new StepNode("polish")
         ]));
+        var pipeline = (PipelineRootNode)document.Root;
 
         return new DemoPipelineRun(
             PipelineId: "demo.pipeline.default",
             Decision: decision.Code,
-            ReplayHash: response.OutputHash,
-            StepCount: 3,
+            ReplayHash: "demo-replay-hash",
+            StepCount: pipeline.Steps.Count,
             ContractAlignment: new DemoContractAlignment(
                 routing.ProviderId,
                 routing.RequestedModelId,
                 document.Root.Type,
-                ((PipelineRootNode)document.Root).Steps[0] is StepNode first
-                    ? first.Name
-                    : "unknown"));
+                ((StepNode)pipeline.Steps[0]).Name));
     }
 }

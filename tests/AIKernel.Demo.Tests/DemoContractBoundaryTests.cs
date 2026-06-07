@@ -9,6 +9,10 @@ public sealed class DemoContractBoundaryTests
 {
     private static readonly Regex OperatorIdPattern =
         new(@"^[a-z0-9]+(\.[a-z0-9]+)*$", RegexOptions.CultureInvariant);
+    private static readonly Regex MetadataKeyPattern =
+        new(@"^[a-z0-9_]+$", RegexOptions.CultureInvariant);
+    private static readonly Regex OperationNamePattern =
+        new(@"^[a-z0-9]+(\.[a-z0-9]+)*$", RegexOptions.CultureInvariant);
 
     [Fact]
     public void DemoCanRepresentControlExecutionUsingOnlyContractTypes()
@@ -48,8 +52,10 @@ public sealed class DemoContractBoundaryTests
         Assert.Equal("demo-exec-001", request.ExecutionId);
         Assert.Equal("02-provider", snapshot.NodeId);
         Assert.Equal("demo.operator.provider", snapshot.Metadata["operator_id"]);
+        Assert.All(snapshot.Metadata.Keys, key => Assert.Matches(MetadataKeyPattern, key));
         Assert.Equal("Completed", result.Status);
         Assert.Equal("2", result.Metadata["node_count"]);
+        Assert.All(result.Metadata.Keys, key => Assert.Matches(MetadataKeyPattern, key));
     }
 
     [Fact]
@@ -77,6 +83,7 @@ public sealed class DemoContractBoundaryTests
 
         Assert.Equal(operations, operations.Distinct(StringComparer.Ordinal).ToArray());
         Assert.All(operations, operation => Assert.DoesNotContain(' ', operation));
+        Assert.All(operations, operation => Assert.Matches(OperationNamePattern, operation));
         Assert.Contains("chat.completion", operations);
         Assert.Contains("pipeline.validate", operations);
         Assert.Contains("tensor.layernorm", operations);

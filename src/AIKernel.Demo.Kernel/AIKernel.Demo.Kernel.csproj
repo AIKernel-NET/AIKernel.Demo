@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\AIKernel.Demo.Execution\AIKernel.Demo.Execution.csproj" />
+    <ProjectReference Include="..\AIKernel.Demo.KernelExecution\AIKernel.Demo.KernelExecution.csproj" />
+    <ProjectReference Include="..\AIKernel.Demo.Routing\AIKernel.Demo.Routing.csproj" />
+  </ItemGroup>
+</Project>

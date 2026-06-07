@@ -4,6 +4,16 @@
   <Project Path="src/AIKernel.Demo.Wasm/AIKernel.Demo.Wasm.csproj" />
   <Project Path="src/AIKernel.Demo.Providers.Mock/AIKernel.Demo.Providers.Mock.csproj" />
   <Project Path="src/AIKernel.Demo.Vfs.Git/AIKernel.Demo.Vfs.Git.csproj" />
+  <Project Path="src/AIKernel.Demo.Dsl/AIKernel.Demo.Dsl.csproj" />
+  <Project Path="src/AIKernel.Demo.Execution/AIKernel.Demo.Execution.csproj" />
+  <Project Path="src/AIKernel.Demo.KernelExecution/AIKernel.Demo.KernelExecution.csproj" />
+  <Project Path="src/AIKernel.Demo.Kernel/AIKernel.Demo.Kernel.csproj" />
+  <Project Path="src/AIKernel.Demo.Hosting/AIKernel.Demo.Hosting.csproj" />
+  <Project Path="src/AIKernel.Demo.Semantics/AIKernel.Demo.Semantics.csproj" />
+  <Project Path="src/AIKernel.Demo.Replay/AIKernel.Demo.Replay.csproj" />
+  <Project Path="src/AIKernel.Demo.Routing/AIKernel.Demo.Routing.csproj" />
+  <Project Path="src/AIKernel.Demo.Vfs/AIKernel.Demo.Vfs.csproj" />
+  <Project Path="src/AIKernel.Demo.Integration/AIKernel.Demo.Integration.csproj" />
   <Project Path="src/AIKernel.Demo.Pipelines/AIKernel.Demo.Pipelines.csproj" />
   <Project Path="src/AIKernel.Demo.PDP/AIKernel.Demo.PDP.csproj" />
   <Project Path="src/AIKernel.Demo.ReplayInspector/AIKernel.Demo.ReplayInspector.csproj" />

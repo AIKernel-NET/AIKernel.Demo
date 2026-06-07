@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\AIKernel.Demo.Semantics\AIKernel.Demo.Semantics.csproj" />
+  </ItemGroup>
+</Project>

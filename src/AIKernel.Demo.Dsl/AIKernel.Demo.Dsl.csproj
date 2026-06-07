@@ -5,7 +5,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AIKernel.Demo.PDP\AIKernel.Demo.PDP.csproj" />
-    <ProjectReference Include="..\AIKernel.Demo.Providers.Mock\AIKernel.Demo.Providers.Mock.csproj" />
+    <ProjectReference Include="..\AIKernel.Demo.Execution\AIKernel.Demo.Execution.csproj" />
   </ItemGroup>
 </Project>

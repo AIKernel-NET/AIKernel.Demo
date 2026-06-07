@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AIKernel.Common" Version="$(AIKernelPackageVersion)" />
     <PackageReference Include="AIKernel.Abstractions" Version="$(AIKernelPackageVersion)" />
     <PackageReference Include="AIKernel.Dtos" Version="$(AIKernelPackageVersion)" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.6.0" />
@@ -18,7 +19,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\AIKernel.Demo.Dsl\AIKernel.Demo.Dsl.csproj" />
+    <ProjectReference Include="..\..\src\AIKernel.Demo.Execution\AIKernel.Demo.Execution.csproj" />
+    <ProjectReference Include="..\..\src\AIKernel.Demo.Hosting\AIKernel.Demo.Hosting.csproj" />
+    <ProjectReference Include="..\..\src\AIKernel.Demo.Integration\AIKernel.Demo.Integration.csproj" />
+    <ProjectReference Include="..\..\src\AIKernel.Demo.Kernel\AIKernel.Demo.Kernel.csproj" />
+    <ProjectReference Include="..\..\src\AIKernel.Demo.KernelExecution\AIKernel.Demo.KernelExecution.csproj" />
+    <ProjectReference Include="..\..\src\AIKernel.Demo.PDP\AIKernel.Demo.PDP.csproj" />
     <ProjectReference Include="..\..\src\AIKernel.Demo.Pipelines\AIKernel.Demo.Pipelines.csproj" />
+    <ProjectReference Include="..\..\src\AIKernel.Demo.Replay\AIKernel.Demo.Replay.csproj" />
+    <ProjectReference Include="..\..\src\AIKernel.Demo.ReplayInspector\AIKernel.Demo.ReplayInspector.csproj" />
+    <ProjectReference Include="..\..\src\AIKernel.Demo.Routing\AIKernel.Demo.Routing.csproj" />
+    <ProjectReference Include="..\..\src\AIKernel.Demo.Semantics\AIKernel.Demo.Semantics.csproj" />
+    <ProjectReference Include="..\..\src\AIKernel.Demo.Vfs\AIKernel.Demo.Vfs.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AIKernel.Demo.Dsl\AIKernel.Demo.Dsl.csproj" />
+    <ProjectReference Include="..\AIKernel.Demo.Kernel\AIKernel.Demo.Kernel.csproj" />
+    <ProjectReference Include="..\AIKernel.Demo.KernelExecution\AIKernel.Demo.KernelExecution.csproj" />
+  </ItemGroup>
+</Project>
