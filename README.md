@@ -80,7 +80,8 @@ Release notes:
   and ExecutionState diffs.
 - `AIKernel.Demo.Python` - Python teaching/demo port of the same contract
   semantics: DSL parsing, monad-style pipelines, VFS snapshots, semantic
-  deltas, and deterministic replay.
+  deltas, deterministic replay, and one-to-one release surfaces for the eight
+  0.1.1 C# golden-path demos.
 
 ## Documentation
 

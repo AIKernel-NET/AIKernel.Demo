@@ -28,6 +28,7 @@ so no package install is required for local validation.
 
 | Module | Role |
 | --- | --- |
+| `release_surfaces` | One-to-one Python counterparts for the eight 0.1.1 C# golden-path demos. |
 | `execution` | Deterministic graph and node DTOs plus the tiny execution engine. |
 | `kernel` | Task scheduling, provider routing, LLM output mock, and kernel run DTO. |
 | `pipelines` | Default pipeline catalog and Python monad-style composition demo. |
@@ -40,6 +41,24 @@ so no package install is required for local validation.
 | `providers.mock` | Deterministic SHA-256 mock provider. |
 | `replay_inspector` | Fail-closed replay summary formatting. |
 | `control_boundary` | Python `Protocol`/DTO equivalents for Control boundary demos. |
+
+## C# / Python Pairing
+
+The 0.1.1 release demos are paired across languages. C# projects demonstrate
+the package-facing .NET surface, while `release_surfaces` gives Python readers
+the same dry-run teaching map without external network calls, native CUDA
+loading, model downloads, or browser WebGPU requirements.
+
+| C# demo | Python counterpart |
+| --- | --- |
+| `AIKernel.Demo.CoreRuntime` | `run_core_runtime_demo()` |
+| `AIKernel.Demo.Contracts` | `run_contracts_demo()` |
+| `AIKernel.Demo.Control` | `run_control_demo()` |
+| `AIKernel.Demo.Providers` | `run_providers_demo()` |
+| `AIKernel.Demo.StandardProviders` | `run_standard_providers_demo()` |
+| `AIKernel.Demo.Tools` | `run_tools_demo()` |
+| `AIKernel.Demo.Wasm` | `run_wasm_demo()` |
+| `AIKernel.Demo.Cuda` | `run_cuda_demo()` |
 
 ## Notes
 

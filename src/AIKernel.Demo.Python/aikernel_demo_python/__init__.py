@@ -30,6 +30,7 @@ Architectural Intent:
     小さな contract-facing step として読める必要があります。
 """
 
+from .release_surfaces import DemoSurfaceResult, run_all_release_surfaces
 from .result import Result
 
-__all__ = ["Result"]
+__all__ = ["DemoSurfaceResult", "Result", "run_all_release_surfaces"]
