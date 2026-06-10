@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AIKernel.Tools.Instrumentation" Version="[$(AIKernelToolsPackageVersion)]" />
+    <PackageReference Include="AIKernel.Tools.Inspectors.ChatHistoryScraper" Version="[$(AIKernelToolsPackageVersion)]" />
+    <PackageReference Include="AIKernel.Tools.Inspectors.KernelClock" Version="[$(AIKernelToolsPackageVersion)]" />
+    <PackageReference Include="AIKernel.Tools.Inspectors.Vfs" Version="[$(AIKernelToolsPackageVersion)]" />
+    <PackageReference Include="AIKernel.Tools.Capability.RomStorage" Version="[$(AIKernelToolsPackageVersion)]" />
+  </ItemGroup>
+</Project>

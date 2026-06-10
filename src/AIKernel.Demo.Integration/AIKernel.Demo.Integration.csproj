@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <PackageReference Include="AIKernel.Common" Version="[$(AIKernelCorePackageVersion)]" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AIKernel.Demo.Dsl\AIKernel.Demo.Dsl.csproj" />
+    <ProjectReference Include="..\AIKernel.Demo.Execution\AIKernel.Demo.Execution.csproj" />
+    <ProjectReference Include="..\AIKernel.Demo.Hosting\AIKernel.Demo.Hosting.csproj" />
+    <ProjectReference Include="..\AIKernel.Demo.KernelExecution\AIKernel.Demo.KernelExecution.csproj" />
+    <ProjectReference Include="..\AIKernel.Demo.PDP\AIKernel.Demo.PDP.csproj" />
+    <ProjectReference Include="..\AIKernel.Demo.Replay\AIKernel.Demo.Replay.csproj" />
+    <ProjectReference Include="..\AIKernel.Demo.Routing\AIKernel.Demo.Routing.csproj" />
+    <ProjectReference Include="..\AIKernel.Demo.Semantics\AIKernel.Demo.Semantics.csproj" />
+  </ItemGroup>
+</Project>

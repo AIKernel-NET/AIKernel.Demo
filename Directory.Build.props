@@ -1,0 +1,28 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <Version>0.1.1</Version>
+    <AssemblyVersion>0.1.1.0</AssemblyVersion>
+    <FileVersion>0.1.1.0</FileVersion>
+    <InformationalVersion>0.1.1</InformationalVersion>
+
+    <Authors>Takuya Sogawa</Authors>
+    <Company>AIKernel-NET</Company>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/AIKernel-NET/AIKernel.Demo</RepositoryUrl>
+    <Copyright>Copyright © 2026 Takuya Sogawa of AIKernel-NET</Copyright>
+    <PackageTags>aikernel;demo;knowledge-os;rom;dsl;replay;capability;webapi;wasm</PackageTags>
+
+    <AIKernelPackageVersion>[0.1.1]</AIKernelPackageVersion>
+    <AIKernelCorePackageVersion>0.1.1</AIKernelCorePackageVersion>
+    <AIKernelProviderPackageVersion>0.1.1</AIKernelProviderPackageVersion>
+    <AIKernelWasmPackageVersion>0.1.1</AIKernelWasmPackageVersion>
+    <AIKernelToolsPackageVersion>0.1.1</AIKernelToolsPackageVersion>
+    <AIKernelControlPackageVersion>0.1.1</AIKernelControlPackageVersion>
+    <AIKernelCudaPackageVersion>0.1.1</AIKernelCudaPackageVersion>
+    <RestoreAdditionalProjectSources>$(MSBuildThisFileDirectory)..\artifacts\local-packages;$(MSBuildThisFileDirectory)..\artifacts\packages;$(RestoreAdditionalProjectSources)</RestoreAdditionalProjectSources>
+  </PropertyGroup>
+</Project>
