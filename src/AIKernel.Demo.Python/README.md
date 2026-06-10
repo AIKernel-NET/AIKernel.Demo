@@ -3,7 +3,7 @@
 Python teaching/demo port of the AIKernel.Demo C# samples.
 
 This is not a production runtime. It is a compact, contract-pure demonstration
-of the AIKernel 0.1.0 ideas:
+of the AIKernel 0.1.1 ideas:
 
 - Interface-Led Architecture through small DTOs and `Protocol` contracts.
 - Deterministic Replay through `DemoSemanticDelta`, `DemoReplayLog`, and

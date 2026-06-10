@@ -125,7 +125,11 @@ public sealed class DemoVfsSnapshot
         string path)
     {
         var normalized = DemoVfsPath.Canonicalize(path);
-        var prefix = normalized.Length == 0 ? string.Empty : normalized + "/";
+        var prefix = normalized.Length switch
+        {
+            0 => string.Empty,
+            _ => normalized + "/"
+        };
 
         return _directories
             .Where(directory => directory.StartsWith(prefix, StringComparison.Ordinal))
@@ -188,6 +192,10 @@ public sealed class DemoVfsSnapshot
         string path)
     {
         var index = path.LastIndexOf('/');
-        return index <= 0 ? string.Empty : path[..index];
+        return index switch
+        {
+            <= 0 => string.Empty,
+            _ => path[..index]
+        };
     }
 }

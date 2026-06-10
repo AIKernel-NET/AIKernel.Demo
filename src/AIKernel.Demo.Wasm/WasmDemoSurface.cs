@@ -1,5 +1,7 @@
 namespace AIKernel.Demo.Wasm;
 
+using AIKernel.Abstractions.Processes;
+
 /// <summary>
 /// [EN] Represents a public demo surface used as readable reference code for AIKernel learners.
 /// [JA] AIKernel 学習者向けの読みやすい参照コードとして公開される Demo サーフェスを表します。
@@ -24,4 +26,73 @@ public static class WasmDemoSurface
     /// </returns>
     public static string GetInitialRoute()
         => "/demo/pipeline";
+
+    /// <summary>
+    /// [EN] Runs the WASM process provider through the Core process abstraction.
+    /// [JA] Core process abstraction を通じて WASM process Provider を実行します。
+    /// </summary>
+    /// <returns>
+    /// [EN] A deterministic snapshot of the WASM process lifecycle.
+    /// [JA] WASM process lifecycle の決定論的 snapshot です。
+    /// </returns>
+    public static async Task<WasmProcessDemoResult> RunProcessLifecycleAsync()
+        => await new WasmDemoService().RunProcessLifecycleAsync().ConfigureAwait(false);
+
+    /// <summary>
+    /// [EN] Runs a WebGPU compute demo using the deterministic CPU fallback path.
+    /// [JA] deterministic CPU fallback path を使って WebGPU compute Demo を実行します。
+    /// </summary>
+    /// <returns>
+    /// [EN] A deterministic vector-add result produced through the WebGPU provider boundary.
+    /// [JA] WebGPU Provider 境界を通じて生成された決定論的な vector-add result です。
+    /// </returns>
+    public static async Task<WebGpuFallbackDemoResult> RunWebGpuFallbackVectorAddAsync()
+        => await new WasmDemoService().RunWebGpuFallbackVectorAddAsync().ConfigureAwait(false);
 }
+
+/// <summary>
+/// [EN] Result snapshot for the WASM process lifecycle demo.
+/// [JA] WASM process lifecycle Demo の result snapshot です。
+/// </summary>
+/// <param name="ProcessId">
+/// [EN] Created WASM process id.
+/// [JA] 作成された WASM process id です。
+/// </param>
+/// <param name="ProcessName">
+/// [EN] Created WASM process name.
+/// [JA] 作成された WASM process name です。
+/// </param>
+/// <param name="RunningState">
+/// [EN] State observed after start.
+/// [JA] start 後に観測された state です。
+/// </param>
+/// <param name="FinalState">
+/// [EN] State observed after stop.
+/// [JA] stop 後に観測された state です。
+/// </param>
+public sealed record WasmProcessDemoResult(
+    string ProcessId,
+    string ProcessName,
+    ProcessState RunningState,
+    ProcessState FinalState);
+
+/// <summary>
+/// [EN] Result snapshot for the WebGPU fallback vector-add demo.
+/// [JA] WebGPU fallback vector-add Demo の result snapshot です。
+/// </summary>
+/// <param name="ProviderId">
+/// [EN] WebGPU provider id.
+/// [JA] WebGPU Provider id です。
+/// </param>
+/// <param name="UsingCpuFallback">
+/// [EN] Whether the provider used CPU fallback.
+/// [JA] Provider が CPU fallback を使用したかどうかです。
+/// </param>
+/// <param name="VectorAdd">
+/// [EN] Deterministic vector-add output.
+/// [JA] 決定論的な vector-add 出力です。
+/// </param>
+public sealed record WebGpuFallbackDemoResult(
+    string ProviderId,
+    bool UsingCpuFallback,
+    IReadOnlyList<float> VectorAdd);

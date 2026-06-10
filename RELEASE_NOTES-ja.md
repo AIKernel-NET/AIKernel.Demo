@@ -2,6 +2,23 @@
 
 [English](RELEASE_NOTES.md)
 
+## 0.1.1
+
+> [EN] Demo 0.1.1 validates the published AIKernel package family as one readable runtime surface.
+>
+> [JA] Demo 0.1.1 は、公開済み AIKernel package family をひとつの可読 runtime surface として検証する。
+
+AIKernel.Demo 0.1.1 は、公開済み AIKernel 0.1.1 package family の release validation
+workspace です。NuGet / PyPI package として公開する対象ではなく、公開済みの Core、
+Control、Providers、Wasm、Tools package が public contract 経由で合成できることを示します。
+
+- Demo の package reference を公式 AIKernel 0.1.1 package family に揃えました。
+- `AIKernel.Providers.Standard` と `AIKernel.Wasm.WebGpuComputeProvider` を公開済み
+  package ID で消費します。
+- Console、WebApi、Wasm、OS provider、VFS、PDP、pipeline、replay、Python demo surface を
+  contract-level example として維持します。
+- Package 登録後に runtime を検証するための、読める release atlas として Demo を保ちます。
+
 ## 0.1.0
 
 > [EN] Demo 0.1.0 becomes the readable atlas of the runtime: every semantic boundary is shown, not hidden.

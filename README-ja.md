@@ -2,7 +2,7 @@
 
 [English README](README.md)
 
-AIKernel.Demo は、AIKernel 0.1.0 package family の利用者向け sample workspace です。
+AIKernel.Demo は、AIKernel 0.1.1 package family の利用者向け sample workspace です。
 AIKernel.Core の抽象を、console、API host、browser、VFS、PDP、pipeline、
 replay-inspection demo として実際に見える形にします。
 
@@ -12,8 +12,9 @@ AIKernel.Demo は、application が Core、Kernel、Capability module、VFS、PD
 pipeline、Replay inspection をどのように合成するかを示します。Demo 専用 code を
 contract repository や runtime repository に入れません。
 
-この repository は、完了した 0.0.x design-implementation phase から、2026-06-09
-予定の 0.1.0 prototype validation phase への移行を示します。
+この repository は、完了した 0.1.0 prototype validation phase から、公開済みの
+Core、Control、Providers、Wasm、Tools package contract を消費する 0.1.1 release line
+への移行を示します。
 
 Demo は利用者側です。Runtime execution engine は AIKernel.Control に属します。
 外部 Capability module は AIKernel.Tools または専用 Capability repository に属します。
@@ -27,7 +28,10 @@ Demo は利用者側です。Runtime execution engine は AIKernel.Control に�
   OpenAI-compatible API host demo。ProviderRouter、PDP Allow/Deny、ReplayLog HTTP
   response headers を扱います。
 - `AIKernel.Demo.Wasm` - Context、Execution、VFS 可視化、WebAssembly provider call、
-  DAG step animation、PromptRules signature verification の browser Playground。
+  WebGPU CPU fallback、DAG step animation、PromptRules signature verification の
+  browser Playground。
+- `AIKernel.Demo.Os` - `AIKernel.Providers.Standard` を消費し、CPU compute、
+  process supervision、安全な scheduler example を示す standard OS provider demo。
 - `AIKernel.Demo.Providers.Mock` - contract test 用の deterministic mock Provider。
   chat/embedding capability declaration、fixed response、ProviderRouter behavior を確認します。
 - `AIKernel.Demo.Vfs.Git` - Git repository を virtual file system として mount し、
@@ -43,6 +47,8 @@ Demo は利用者側です。Runtime execution engine は AIKernel.Control に�
 
 ## ドキュメント
 
+- [Documentation index](docs/README-ja.md)
+- [User Guide](docs/user-guide/index-ja.md)
 - [Architecture](docs/architecture/index-ja.md)
 - [Pipelines](docs/pipelines/index-ja.md)
 
@@ -64,15 +70,26 @@ Demo は Core の design decision を意図的に反映します。Pipeline は 
 提案者で PDP が最終決定者です。Replay は同じ execution を再実行するために必要な
 material を保存します。
 
-初期 0.1.0 prototype には `AIKernel.Demo.Pipelines` の contract-alignment smoke path が
+0.1.1 release には `AIKernel.Demo.Pipelines` の contract-alignment smoke path が
 含まれます。Routing data は `AIKernel.Dtos.Routing.KernelProviderRoutingDecision`、
 DSL semantic IR は `AIKernel.Dtos.Dsl` を通じて構築します。Demo code は
 AIKernel.NET contracts の consumer であり、Core internal DSL / History runtime type には
 依存しません。
 
-0.1.0 prototype development 中は、NuGet cache collision を避けるために
-`AIKernelPackageVersion` が `0.1.0.2` のような local build を指す場合があります。
-Public release build では package family を固定版の 0.1.0 release version に揃えます。
+0.1.1 release では、`AIKernelPackageVersion` と Core、Providers、Wasm、Tools の
+package version property は公開済みの 0.1.1 package family を指します。Demo は
+個別に package 公開する対象ではなく、release validation workspace として扱います。
+
+## コントリビュータ向けガイドライン
+
+Demo の変更は、AIKernel 共通の開発規律に従ってください。
+
+- [AIKernel 開発ガイドライン](../AIKernel.NET/docs/guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES-jp.md)
+- [AIKernel Development Guidelines](../AIKernel.NET/docs/guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES.md)
+
+Demo は public contract の consumer に留め、internal runtime type へ依存せず、
+deterministic replay example を維持し、local validation で使用する package
+version assumption を明記してください。
 
 ## ライセンス
 
