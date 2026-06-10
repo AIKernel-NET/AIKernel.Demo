@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AIKernel.Control.Core" Version="[$(AIKernelControlPackageVersion)]" />
+    <PackageReference Include="AIKernel.Control.CPU" Version="[$(AIKernelControlPackageVersion)]" />
+    <PackageReference Include="AIKernel.Control.Emulator" Version="[$(AIKernelControlPackageVersion)]" />
+    <PackageReference Include="AIKernel.Control.GPU" Version="[$(AIKernelControlPackageVersion)]" />
+    <PackageReference Include="AIKernel.Abstractions" Version="$(AIKernelPackageVersion)" />
+    <PackageReference Include="AIKernel.Dtos" Version="$(AIKernelPackageVersion)" />
+  </ItemGroup>
+</Project>

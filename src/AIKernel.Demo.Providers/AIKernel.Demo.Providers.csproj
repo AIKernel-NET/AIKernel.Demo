@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AIKernel.Providers.ChatHistory" Version="[$(AIKernelProviderPackageVersion)]" />
+    <PackageReference Include="AIKernel.Providers.ChatOpenAI" Version="[$(AIKernelProviderPackageVersion)]" />
+    <PackageReference Include="AIKernel.Providers.CudaCompute" Version="[$(AIKernelProviderPackageVersion)]" />
+    <PackageReference Include="AIKernel.Providers.LocalLlm" Version="[$(AIKernelProviderPackageVersion)]" />
+    <PackageReference Include="AIKernel.Providers.MicrosoftAI" Version="[$(AIKernelProviderPackageVersion)]" />
+    <PackageReference Include="AIKernel.Providers.DynamicPipelineCompiler" Version="[$(AIKernelProviderPackageVersion)]" />
+    <PackageReference Include="AIKernel.Abstractions" Version="$(AIKernelPackageVersion)" />
+    <PackageReference Include="AIKernel.Dtos" Version="$(AIKernelPackageVersion)" />
+  </ItemGroup>
+</Project>

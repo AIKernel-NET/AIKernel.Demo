@@ -21,6 +21,8 @@
     <AIKernelProviderPackageVersion>0.1.1</AIKernelProviderPackageVersion>
     <AIKernelWasmPackageVersion>0.1.1</AIKernelWasmPackageVersion>
     <AIKernelToolsPackageVersion>0.1.1</AIKernelToolsPackageVersion>
+    <AIKernelControlPackageVersion>0.1.1</AIKernelControlPackageVersion>
+    <AIKernelCudaPackageVersion>0.1.1</AIKernelCudaPackageVersion>
     <RestoreAdditionalProjectSources>$(MSBuildThisFileDirectory)..\artifacts\local-packages;$(MSBuildThisFileDirectory)..\artifacts\packages;$(RestoreAdditionalProjectSources)</RestoreAdditionalProjectSources>
   </PropertyGroup>
 </Project>

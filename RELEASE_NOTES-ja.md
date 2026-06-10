@@ -4,9 +4,12 @@
 
 ## 0.1.1
 
-> [EN] Demo 0.1.1 validates the published AIKernel package family as one readable runtime surface.
->
-> [JA] Demo 0.1.1 は、公開済み AIKernel package family をひとつの可読 runtime surface として検証する。
+**June 10th, 2026 - Verifying the Semantic OS end-to-end.**
+**2026年6月10日--Semantic OS を端から端まで検証する。**
+
+Verifying the Semantic OS end-to-end: all eight demo layers validate the 0.1.1
+semantic boundary. Semantic OS の端から端までの検証--8 つのデモ層が 0.1.1 の
+セマンティック境界を検証する。
 
 AIKernel.Demo 0.1.1 は、公開済み AIKernel 0.1.1 package family の release validation
 workspace です。NuGet / PyPI package として公開する対象ではなく、公開済みの Core、
