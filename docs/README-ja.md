@@ -12,6 +12,16 @@ Tools layer を組み合わせる流れを、runtime behavior を Demo 側へ移
 Monolith は 0.1.x 系の安定化後に全 SDK layer を統合する標準 reference distribution
 として位置づけられます。Demo はそれらの layer を学ぶための入口です。
 
+## リポジトリ横断整合
+
+共有の repository boundary、0.1.1.1 local NuGet versioning、この更新ラインでの
+NuGet-only / no-PyPI rule は
+[AIKernel Repository Alignment v0.1.1.1](https://github.com/AIKernel-NET/AIKernel.NET/blob/main/docs/development/repository-alignment-v0.1.1.1-ja.md)
+で定義します。
+
+Demo は package family を消費する runnable example を所有します。Runtime contract、
+production package ownership、shared scenario semantics は定義しません。
+
 ## 最初に読むもの
 
 - [User Guide](user-guide/index-ja.md)

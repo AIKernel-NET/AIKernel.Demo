@@ -13,6 +13,15 @@ AIKernel.Monolith is the official AIOS distribution now in development. It is
 planned as the standard reference distribution that integrates all SDK layers
 after the 0.1.x line stabilizes; Demo remains the learning path for those layers.
 
+## Cross-Repository Alignment
+
+Shared repository boundaries, 0.1.1.1 local NuGet versioning, and the
+NuGet-only / no-PyPI rule for this update line are defined by
+[AIKernel Repository Alignment v0.1.1.1](https://github.com/AIKernel-NET/AIKernel.NET/blob/main/docs/development/repository-alignment-v0.1.1.1.md).
+
+Demo owns runnable examples that consume the package family. It must not define
+runtime contracts, production package ownership, or shared scenario semantics.
+
 ## Start Here
 
 - [User Guide](user-guide/index.md)
