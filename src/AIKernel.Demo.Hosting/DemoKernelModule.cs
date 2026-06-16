@@ -22,7 +22,7 @@ public sealed class DemoKernelModule : IDemoKernelModule
     /// [EN] The operation is documented at the member boundary so generated reference pages can explain the runtime intent without changing behavior.
     /// [JA] この操作は member boundary で文書化されるため、振る舞いを変えずに生成 reference page が runtime intent を説明できます。
     /// </remarks>
-    /// <param name="services">
+    /// <param name="services">EN:  JA: services パラメーターです。
     /// [EN] The demo value supplied for <c>services</c>.
     /// [JA] <c>services</c> として渡される Demo 値です。
     /// </param>

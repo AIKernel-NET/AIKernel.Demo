@@ -18,15 +18,15 @@ public static class ReplaySummaryFormatter
     /// [EN] The operation is documented at the member boundary so generated reference pages can explain the runtime intent without changing behavior.
     /// [JA] この操作は member boundary で文書化されるため、振る舞いを変えずに生成 reference page が runtime intent を説明できます。
     /// </remarks>
-    /// <param name="replayHash">
+    /// <param name="replayHash">EN:  JA: replayHash パラメーターです。
     /// [EN] The demo value supplied for <c>replayHash</c>.
     /// [JA] <c>replayHash</c> として渡される Demo 値です。
     /// </param>
-    /// <param name="stepCount">
+    /// <param name="stepCount">EN:  JA: stepCount パラメーターです。
     /// [EN] The demo value supplied for <c>stepCount</c>.
     /// [JA] <c>stepCount</c> として渡される Demo 値です。
     /// </param>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] The deterministic result produced by this demo member.
     /// [JA] この Demo メンバーが生成する決定論的な結果です。
     /// </returns>

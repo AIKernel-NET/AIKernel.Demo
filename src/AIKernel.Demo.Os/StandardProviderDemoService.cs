@@ -12,6 +12,7 @@ namespace AIKernel.Demo.Os;
 /// </summary>
 public sealed class StandardProviderDemoService : Abstractions.IStandardProviderDemoSurface
 {
+    /// <summary>EN: Documentation for public API. JA: RunAsync を実行します。</summary>
     /// <inheritdoc />
     public async Task<StandardProviderDemoResult> RunAsync()
     {

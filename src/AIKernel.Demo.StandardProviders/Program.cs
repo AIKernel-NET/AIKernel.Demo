@@ -14,7 +14,7 @@ public static class Program
     /// [EN] Runs the standard provider demo and writes each OS-driver log line.
     /// [JA] standard provider demo を実行し、OS driver log の各行を書き込みます。
     /// </summary>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] A task representing the asynchronous console run.
     /// [JA] 非同期 console 実行を表す task です。
     /// </returns>

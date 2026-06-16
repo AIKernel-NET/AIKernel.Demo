@@ -17,11 +17,11 @@ public static class DslParserDemo
     /// [EN] Gets the deterministic demo value for <c>AllowedSteps</c>.
     /// [JA] <c>AllowedSteps</c> に対応する決定論的な Demo 値を取得します。
     /// </summary>
-    /// <param name="Ordinal">
+    /// <param name="Ordinal">EN:  JA: Ordinal パラメーターです。
     /// [EN] The demo value supplied for <c>Ordinal</c>.
     /// [JA] <c>Ordinal</c> として渡される Demo 値です。
     /// </param>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] The deterministic result produced by this demo member.
     /// [JA] この Demo メンバーが生成する決定論的な結果です。
     /// </returns>
@@ -41,11 +41,11 @@ public static class DslParserDemo
     /// [EN] The operation is documented at the member boundary so generated reference pages can explain the runtime intent without changing behavior.
     /// [JA] この操作は member boundary で文書化されるため、振る舞いを変えずに生成 reference page が runtime intent を説明できます。
     /// </remarks>
-    /// <param name="text">
+    /// <param name="text">EN:  JA: text パラメーターです。
     /// [EN] The demo value supplied for <c>text</c>.
     /// [JA] <c>text</c> として渡される Demo 値です。
     /// </param>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] The deterministic result produced by this demo member.
     /// [JA] この Demo メンバーが生成する決定論的な結果です。
     /// </returns>

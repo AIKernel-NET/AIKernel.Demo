@@ -24,7 +24,7 @@ public static class StandardProvidersDemo
     /// [EN] MemoryFileSystemProvider shows a safe VFS-backed file example, EventBusProvider shows publish/subscribe flow, ConsoleLoggingProvider emits a visible log line, and ProfilerProvider captures a local resource snapshot.
     /// [JA] MemoryFileSystemProvider は安全な VFS-backed file example、EventBusProvider は publish / subscribe flow、ConsoleLoggingProvider は visible log line、ProfilerProvider は local resource snapshot を示します。
     /// </remarks>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] A deterministic log describing the standard provider surfaces touched by the demo.
     /// [JA] デモが触れた standard provider surface を説明する決定論的ログです。
     /// </returns>

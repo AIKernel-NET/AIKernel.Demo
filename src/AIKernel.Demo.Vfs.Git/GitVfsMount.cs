@@ -8,15 +8,15 @@ namespace AIKernel.Demo.Vfs.Git;
 /// [EN] Demo types intentionally keep contract boundaries visible instead of hiding semantic structure, policy, routing, execution, or replay behind framework magic.
 /// [JA] Demo 型は semantic structure、policy、routing、execution、replay の境界を framework magic で隠さず、見える形に保ちます。
 /// </remarks>
-/// <param name="RepositoryPath">
+/// <param name="RepositoryPath">EN:  JA: RepositoryPath パラメーターです。
 /// [EN] The demo value supplied for <c>RepositoryPath</c>.
 /// [JA] <c>RepositoryPath</c> として渡される Demo 値です。
 /// </param>
-/// <param name="Branch">
+/// <param name="Branch">EN:  JA: Branch パラメーターです。
 /// [EN] The demo value supplied for <c>Branch</c>.
 /// [JA] <c>Branch</c> として渡される Demo 値です。
 /// </param>
-/// <param name="RomRoot">
+/// <param name="RomRoot">EN:  JA: RomRoot パラメーターです。
 /// [EN] The demo value supplied for <c>RomRoot</c>.
 /// [JA] <c>RomRoot</c> として渡される Demo 値です。
 /// </param>

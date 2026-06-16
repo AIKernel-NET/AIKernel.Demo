@@ -10,11 +10,11 @@ namespace AIKernel.Demo.Replay;
 /// [EN] Demo types intentionally keep contract boundaries visible instead of hiding semantic structure, policy, routing, execution, or replay behind framework magic.
 /// [JA] Demo 型は semantic structure、policy、routing、execution、replay の境界を framework magic で隠さず、見える形に保ちます。
 /// </remarks>
-/// <param name="Entries">
+/// <param name="Entries">EN:  JA: Entries パラメーターです。
 /// [EN] The demo value supplied for <c>Entries</c>.
 /// [JA] <c>Entries</c> として渡される Demo 値です。
 /// </param>
-/// <param name="FinalHash">
+/// <param name="FinalHash">EN:  JA: FinalHash パラメーターです。
 /// [EN] The demo value supplied for <c>FinalHash</c>.
 /// [JA] <c>FinalHash</c> として渡される Demo 値です。
 /// </param>
@@ -30,11 +30,11 @@ public sealed record DemoReplayLog(
     /// [EN] The operation is documented at the member boundary so generated reference pages can explain the runtime intent without changing behavior.
     /// [JA] この操作は member boundary で文書化されるため、振る舞いを変えずに生成 reference page が runtime intent を説明できます。
     /// </remarks>
-    /// <param name="deltas">
+    /// <param name="deltas">EN:  JA: deltas パラメーターです。
     /// [EN] The demo value supplied for <c>deltas</c>.
     /// [JA] <c>deltas</c> として渡される Demo 値です。
     /// </param>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] The deterministic result produced by this demo member.
     /// [JA] この Demo メンバーが生成する決定論的な結果です。
     /// </returns>

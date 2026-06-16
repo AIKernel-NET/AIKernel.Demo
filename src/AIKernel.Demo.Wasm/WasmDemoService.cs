@@ -24,7 +24,7 @@ public sealed class WasmDemoService : Abstractions.IWasmDemoSurface
     /// [EN] The method creates the supporting providers to show the OS-shaped surface around a WASM process. The process payload is a tiny deterministic module marker, not a real application.
     /// [JA] この method は WASM process の周辺にある OS-shaped surface を示すため、補助 Provider を作成します。process payload は実 application ではなく、小さな決定論的 module marker です。
     /// </remarks>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] A lifecycle snapshot containing id, name, running state, and final state.
     /// [JA] id、name、running state、final state を含む lifecycle snapshot です。
     /// </returns>
@@ -65,7 +65,7 @@ public sealed class WasmDemoService : Abstractions.IWasmDemoSurface
     /// [EN] Automated demos should not require browser GPU hardware. This method still touches the WebGPU provider, native/wasm backend types, descriptor mapper, sample kernel, and Python bridge before executing the safe fallback path.
     /// [JA] 自動デモは browser GPU hardware を要求すべきではありません。この method は安全な fallback path を実行する前に、WebGPU Provider、native / wasm backend 型、descriptor mapper、sample kernel、Python bridge に触れます。
     /// </remarks>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] A deterministic vector-add result and provider fallback status.
     /// [JA] 決定論的な vector-add result と Provider fallback status です。
     /// </returns>
@@ -119,11 +119,11 @@ public sealed class WasmDemoService : Abstractions.IWasmDemoSurface
     /// [EN] Converts float values into little-endian bytes for compute buffers.
     /// [JA] compute buffer 用に float 値を little-endian byte へ変換します。
     /// </summary>
-    /// <param name="values">
+    /// <param name="values">EN:  JA: values パラメーターです。
     /// [EN] Vector values written into a compute buffer.
     /// [JA] compute buffer に書き込む vector 値です。
     /// </param>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] The byte representation used by the compute provider.
     /// [JA] compute provider が使用する byte 表現です。
     /// </returns>
@@ -142,11 +142,11 @@ public sealed class WasmDemoService : Abstractions.IWasmDemoSurface
     /// [EN] Reads the WASM process name through an Option-based cast.
     /// [JA] Option ベースの cast を通じて WASM process name を読み取ります。
     /// </summary>
-    /// <param name="process">
+    /// <param name="process">EN:  JA: process パラメーターです。
     /// [EN] Process returned from the Core process abstraction.
     /// [JA] Core process abstraction から返された process です。
     /// </param>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] The WASM process name, or the deterministic demo fallback name.
     /// [JA] WASM process name、または決定論的な demo fallback name です。
     /// </returns>
@@ -161,11 +161,11 @@ public sealed class WasmDemoService : Abstractions.IWasmDemoSurface
     /// [EN] The demo uses Option instead of null so readers can see the AIKernel preference for explicit presence checks.
     /// [JA] このデモは null ではなく Option を使い、AIKernel が明示的な存在確認を好むことを読者に示します。
     /// </remarks>
-    /// <param name="process">
+    /// <param name="process">EN:  JA: process パラメーターです。
     /// [EN] Process returned from the provider.
     /// [JA] Provider から返された process です。
     /// </param>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] Some when the process is a WasmProcess; otherwise None.
     /// [JA] process が WasmProcess の場合は Some、それ以外は None です。
     /// </returns>
@@ -180,11 +180,11 @@ public sealed class WasmDemoService : Abstractions.IWasmDemoSurface
     /// [EN] Converts compute-buffer bytes back into float values.
     /// [JA] compute-buffer byte を float 値へ戻します。
     /// </summary>
-    /// <param name="bytes">
+    /// <param name="bytes">EN:  JA: bytes パラメーターです。
     /// [EN] Bytes read from the output compute buffer.
     /// [JA] output compute buffer から読み取った byte です。
     /// </param>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] Float values produced by the vector-add operation.
     /// [JA] vector-add operation が生成した float 値です。
     /// </returns>

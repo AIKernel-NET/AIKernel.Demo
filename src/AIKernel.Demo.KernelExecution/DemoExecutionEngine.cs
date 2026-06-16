@@ -22,11 +22,11 @@ public sealed class DemoExecutionEngine
     /// [EN] The operation is documented at the member boundary so generated reference pages can explain the runtime intent without changing behavior.
     /// [JA] この操作は member boundary で文書化されるため、振る舞いを変えずに生成 reference page が runtime intent を説明できます。
     /// </remarks>
-    /// <param name="graph">
+    /// <param name="graph">EN:  JA: graph パラメーターです。
     /// [EN] The demo value supplied for <c>graph</c>.
     /// [JA] <c>graph</c> として渡される Demo 値です。
     /// </param>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] The deterministic result produced by this demo member.
     /// [JA] この Demo メンバーが生成する決定論的な結果です。
     /// </returns>

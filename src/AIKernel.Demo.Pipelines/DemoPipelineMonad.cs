@@ -20,11 +20,11 @@ public static class DemoPipelineMonad
     /// [EN] The operation is documented at the member boundary so generated reference pages can explain the runtime intent without changing behavior.
     /// [JA] この操作は member boundary で文書化されるため、振る舞いを変えずに生成 reference page が runtime intent を説明できます。
     /// </remarks>
-    /// <param name="input">
+    /// <param name="input">EN:  JA: input パラメーターです。
     /// [EN] The demo value supplied for <c>input</c>.
     /// [JA] <c>input</c> として渡される Demo 値です。
     /// </param>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] The deterministic result produced by this demo member.
     /// [JA] この Demo メンバーが生成する決定論的な結果です。
     /// </returns>
@@ -43,11 +43,11 @@ public static class DemoPipelineMonad
     /// [EN] The operation is documented at the member boundary so generated reference pages can explain the runtime intent without changing behavior.
     /// [JA] この操作は member boundary で文書化されるため、振る舞いを変えずに生成 reference page が runtime intent を説明できます。
     /// </remarks>
-    /// <param name="input">
+    /// <param name="input">EN:  JA: input パラメーターです。
     /// [EN] The demo value supplied for <c>input</c>.
     /// [JA] <c>input</c> として渡される Demo 値です。
     /// </param>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] The deterministic result produced by this demo member.
     /// [JA] この Demo メンバーが生成する決定論的な結果です。
     /// </returns>
@@ -64,11 +64,11 @@ public static class DemoPipelineMonad
     /// [EN] The operation is documented at the member boundary so generated reference pages can explain the runtime intent without changing behavior.
     /// [JA] この操作は member boundary で文書化されるため、振る舞いを変えずに生成 reference page が runtime intent を説明できます。
     /// </remarks>
-    /// <param name="normalized">
+    /// <param name="normalized">EN:  JA: normalized パラメーターです。
     /// [EN] The demo value supplied for <c>normalized</c>.
     /// [JA] <c>normalized</c> として渡される Demo 値です。
     /// </param>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] The deterministic result produced by this demo member.
     /// [JA] この Demo メンバーが生成する決定論的な結果です。
     /// </returns>
@@ -83,11 +83,11 @@ public static class DemoPipelineMonad
     /// [EN] The operation is documented at the member boundary so generated reference pages can explain the runtime intent without changing behavior.
     /// [JA] この操作は member boundary で文書化されるため、振る舞いを変えずに生成 reference page が runtime intent を説明できます。
     /// </remarks>
-    /// <param name="compiled">
+    /// <param name="compiled">EN:  JA: compiled パラメーターです。
     /// [EN] The demo value supplied for <c>compiled</c>.
     /// [JA] <c>compiled</c> として渡される Demo 値です。
     /// </param>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] The deterministic result produced by this demo member.
     /// [JA] この Demo メンバーが生成する決定論的な結果です。
     /// </returns>

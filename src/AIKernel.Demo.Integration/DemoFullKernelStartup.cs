@@ -24,15 +24,15 @@ public static class DemoKernelStartupPipeline
     /// [EN] The operation is documented at the member boundary so generated reference pages can explain the runtime intent without changing behavior.
     /// [JA] この操作は member boundary で文書化されるため、振る舞いを変えずに生成 reference page が runtime intent を説明できます。
     /// </remarks>
-    /// <param name="pipelineId">
+    /// <param name="pipelineId">EN:  JA: pipelineId パラメーターです。
     /// [EN] The demo value supplied for <c>pipelineId</c>.
     /// [JA] <c>pipelineId</c> として渡される Demo 値です。
     /// </param>
-    /// <param name="dslText">
+    /// <param name="dslText">EN:  JA: dslText パラメーターです。
     /// [EN] The demo value supplied for <c>dslText</c>.
     /// [JA] <c>dslText</c> として渡される Demo 値です。
     /// </param>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] The deterministic result produced by this demo member.
     /// [JA] この Demo メンバーが生成する決定論的な結果です。
     /// </returns>
@@ -67,27 +67,27 @@ public static class DemoKernelStartupPipeline
 /// [EN] Demo types intentionally keep contract boundaries visible instead of hiding semantic structure, policy, routing, execution, or replay behind framework magic.
 /// [JA] Demo 型は semantic structure、policy、routing、execution、replay の境界を framework magic で隠さず、見える形に保ちます。
 /// </remarks>
-/// <param name="PipelineId">
+/// <param name="PipelineId">EN:  JA: PipelineId パラメーターです。
 /// [EN] The demo value supplied for <c>PipelineId</c>.
 /// [JA] <c>PipelineId</c> として渡される Demo 値です。
 /// </param>
-/// <param name="ExecutionGraph">
+/// <param name="ExecutionGraph">EN:  JA: ExecutionGraph パラメーターです。
 /// [EN] The demo value supplied for <c>ExecutionGraph</c>.
 /// [JA] <c>ExecutionGraph</c> として渡される Demo 値です。
 /// </param>
-/// <param name="Steps">
+/// <param name="Steps">EN:  JA: Steps パラメーターです。
 /// [EN] The demo value supplied for <c>Steps</c>.
 /// [JA] <c>Steps</c> として渡される Demo 値です。
 /// </param>
-/// <param name="SemanticDeltas">
+/// <param name="SemanticDeltas">EN:  JA: SemanticDeltas パラメーターです。
 /// [EN] The demo value supplied for <c>SemanticDeltas</c>.
 /// [JA] <c>SemanticDeltas</c> として渡される Demo 値です。
 /// </param>
-/// <param name="ReplayLog">
+/// <param name="ReplayLog">EN:  JA: ReplayLog パラメーターです。
 /// [EN] The demo value supplied for <c>ReplayLog</c>.
 /// [JA] <c>ReplayLog</c> として渡される Demo 値です。
 /// </param>
-/// <param name="FinalHash">
+/// <param name="FinalHash">EN:  JA: FinalHash パラメーターです。
 /// [EN] The demo value supplied for <c>FinalHash</c>.
 /// [JA] <c>FinalHash</c> として渡される Demo 値です。
 /// </param>
@@ -113,15 +113,15 @@ public static class DemoFullKernelStartup
     /// [EN] Executes a deterministic operation on the demo contract surface.
     /// [JA] Demo 契約サーフェス上で決定論的な操作を実行します。
     /// </summary>
-    /// <param name="pipelineId">
+    /// <param name="pipelineId">EN:  JA: pipelineId パラメーターです。
     /// [EN] The demo value supplied for <c>pipelineId</c>.
     /// [JA] <c>pipelineId</c> として渡される Demo 値です。
     /// </param>
-    /// <param name="dslText">
+    /// <param name="dslText">EN:  JA: dslText パラメーターです。
     /// [EN] The demo value supplied for <c>dslText</c>.
     /// [JA] <c>dslText</c> として渡される Demo 値です。
     /// </param>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] The deterministic result produced by this demo member.
     /// [JA] この Demo メンバーが生成する決定論的な結果です。
     /// </returns>
@@ -148,23 +148,23 @@ public static class DemoFullKernelStartup
 /// [EN] Demo types intentionally keep contract boundaries visible instead of hiding semantic structure, policy, routing, execution, or replay behind framework magic.
 /// [JA] Demo 型は semantic structure、policy、routing、execution、replay の境界を framework magic で隠さず、見える形に保ちます。
 /// </remarks>
-/// <param name="PipelineId">
+/// <param name="PipelineId">EN:  JA: PipelineId パラメーターです。
 /// [EN] The demo value supplied for <c>PipelineId</c>.
 /// [JA] <c>PipelineId</c> として渡される Demo 値です。
 /// </param>
-/// <param name="ExecutionGraph">
+/// <param name="ExecutionGraph">EN:  JA: ExecutionGraph パラメーターです。
 /// [EN] The demo value supplied for <c>ExecutionGraph</c>.
 /// [JA] <c>ExecutionGraph</c> として渡される Demo 値です。
 /// </param>
-/// <param name="SemanticDeltas">
+/// <param name="SemanticDeltas">EN:  JA: SemanticDeltas パラメーターです。
 /// [EN] The demo value supplied for <c>SemanticDeltas</c>.
 /// [JA] <c>SemanticDeltas</c> として渡される Demo 値です。
 /// </param>
-/// <param name="ReplayLog">
+/// <param name="ReplayLog">EN:  JA: ReplayLog パラメーターです。
 /// [EN] The demo value supplied for <c>ReplayLog</c>.
 /// [JA] <c>ReplayLog</c> として渡される Demo 値です。
 /// </param>
-/// <param name="FinalHash">
+/// <param name="FinalHash">EN:  JA: FinalHash パラメーターです。
 /// [EN] The demo value supplied for <c>FinalHash</c>.
 /// [JA] <c>FinalHash</c> として渡される Demo 値です。
 /// </param>
@@ -185,27 +185,27 @@ public sealed record DemoFullKernelStartupResult(
     /// [EN] Executes a deterministic operation on the demo contract surface.
     /// [JA] Demo 契約サーフェス上で決定論的な操作を実行します。
     /// </summary>
-    /// <param name="pipelineId">
+    /// <param name="pipelineId">EN:  JA: pipelineId パラメーターです。
     /// [EN] The demo value supplied for <c>pipelineId</c>.
     /// [JA] <c>pipelineId</c> として渡される Demo 値です。
     /// </param>
-    /// <param name="executionGraph">
+    /// <param name="executionGraph">EN:  JA: executionGraph パラメーターです。
     /// [EN] The demo value supplied for <c>executionGraph</c>.
     /// [JA] <c>executionGraph</c> として渡される Demo 値です。
     /// </param>
-    /// <param name="steps">
+    /// <param name="steps">EN:  JA: steps パラメーターです。
     /// [EN] The demo value supplied for <c>steps</c>.
     /// [JA] <c>steps</c> として渡される Demo 値です。
     /// </param>
-    /// <param name="semanticDeltas">
+    /// <param name="semanticDeltas">EN:  JA: semanticDeltas パラメーターです。
     /// [EN] The demo value supplied for <c>semanticDeltas</c>.
     /// [JA] <c>semanticDeltas</c> として渡される Demo 値です。
     /// </param>
-    /// <param name="replayLog">
+    /// <param name="replayLog">EN:  JA: replayLog パラメーターです。
     /// [EN] The demo value supplied for <c>replayLog</c>.
     /// [JA] <c>replayLog</c> として渡される Demo 値です。
     /// </param>
-    /// <param name="finalHash">
+    /// <param name="finalHash">EN:  JA: finalHash パラメーターです。
     /// [EN] The demo value supplied for <c>finalHash</c>.
     /// [JA] <c>finalHash</c> として渡される Demo 値です。
     /// </param>

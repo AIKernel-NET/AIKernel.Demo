@@ -14,10 +14,13 @@ Monolith は 0.1.x 系の安定化後に全 SDK layer を統合する標準 refe
 
 ## リポジトリ横断整合
 
-共有の repository boundary、0.1.1.1 local NuGet versioning、この更新ラインでの
-NuGet-only / no-PyPI rule は
+共有の repository boundary、0.1.1.1 local NuGet versioning、この検証ラインでの
+NuGet-only / no-PyPI rule、v0.1.2 の NuGet + PyPI release assumption は
 [AIKernel Repository Alignment v0.1.1.1](https://github.com/AIKernel-NET/AIKernel.NET/blob/main/docs/development/repository-alignment-v0.1.1.1-ja.md)
 で定義します。
+複数 repository をまたぐ変更を行う場合は、まず
+[リポジトリ横断開発者ガイド v0.1.1.1](https://github.com/AIKernel-NET/AIKernel.NET/blob/main/docs/development/cross-repository-developer-guide-v0.1.1.1-ja.md)
+を読んでください。
 
 Demo は package family を消費する runnable example を所有します。Runtime contract、
 production package ownership、shared scenario semantics は定義しません。
@@ -28,8 +31,10 @@ production package ownership、shared scenario semantics は定義しません�
 - [User Guide English](user-guide/index.md)
 - [Architecture](architecture/index-ja.md)
 - [Pipelines](pipelines/index-ja.md)
+- [教材向けコメント規約](development/educational-comments-ja.md)
 - [Architecture English](architecture/index.md)
 - [Pipelines English](pipelines/index.md)
+- [Educational Comment Guidelines English](development/educational-comments.md)
 
 ## どのページを読むべきか
 
@@ -37,6 +42,8 @@ production package ownership、shared scenario semantics は定義しません�
 - repository ownership と、Demo が runtime behavior を実装しない理由を確認したい場合は
   Architecture を読んでください。
 - DAG-style sample execution model を理解したい場合は Pipelines を読んでください。
+- public な demo member を追加またはレビューする場合は、Demo のコメント自体が教材であるため、
+  教材向けコメント規約を読んでください。
 
 ## Demo の原則
 

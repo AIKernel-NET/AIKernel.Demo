@@ -8,23 +8,23 @@ namespace AIKernel.Demo.Replay;
 /// [EN] Demo types intentionally keep contract boundaries visible instead of hiding semantic structure, policy, routing, execution, or replay behind framework magic.
 /// [JA] Demo 型は semantic structure、policy、routing、execution、replay の境界を framework magic で隠さず、見える形に保ちます。
 /// </remarks>
-/// <param name="StepName">
+/// <param name="StepName">EN:  JA: StepName パラメーターです。
 /// [EN] The demo value supplied for <c>StepName</c>.
 /// [JA] <c>StepName</c> として渡される Demo 値です。
 /// </param>
-/// <param name="DeltaSummary">
+/// <param name="DeltaSummary">EN:  JA: DeltaSummary パラメーターです。
 /// [EN] The demo value supplied for <c>DeltaSummary</c>.
 /// [JA] <c>DeltaSummary</c> として渡される Demo 値です。
 /// </param>
-/// <param name="EntryHash">
+/// <param name="EntryHash">EN:  JA: EntryHash パラメーターです。
 /// [EN] The demo value supplied for <c>EntryHash</c>.
 /// [JA] <c>EntryHash</c> として渡される Demo 値です。
 /// </param>
-/// <param name="ChainHash">
+/// <param name="ChainHash">EN:  JA: ChainHash パラメーターです。
 /// [EN] The demo value supplied for <c>ChainHash</c>.
 /// [JA] <c>ChainHash</c> として渡される Demo 値です。
 /// </param>
-/// <param name="Timestamp">
+/// <param name="Timestamp">EN:  JA: Timestamp パラメーターです。
 /// [EN] The demo value supplied for <c>Timestamp</c>.
 /// [JA] <c>Timestamp</c> として渡される Demo 値です。
 /// </param>

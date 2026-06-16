@@ -14,7 +14,7 @@ public static class Program
     /// [EN] Runs the demo and writes each explanatory log line to standard output.
     /// [JA] デモを実行し、説明用ログの各行を標準出力へ書き込みます。
     /// </summary>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] A task representing the asynchronous console run.
     /// [JA] 非同期 console 実行を表す task です。
     /// </returns>

@@ -8,15 +8,15 @@ namespace AIKernel.Demo.Routing;
 /// [EN] Demo types intentionally keep contract boundaries visible instead of hiding semantic structure, policy, routing, execution, or replay behind framework magic.
 /// [JA] Demo 型は semantic structure、policy、routing、execution、replay の境界を framework magic で隠さず、見える形に保ちます。
 /// </remarks>
-/// <param name="ProviderId">
+/// <param name="ProviderId">EN:  JA: ProviderId パラメーターです。
 /// [EN] The demo value supplied for <c>ProviderId</c>.
 /// [JA] <c>ProviderId</c> として渡される Demo 値です。
 /// </param>
-/// <param name="ModelId">
+/// <param name="ModelId">EN:  JA: ModelId パラメーターです。
 /// [EN] The demo value supplied for <c>ModelId</c>.
 /// [JA] <c>ModelId</c> として渡される Demo 値です。
 /// </param>
-/// <param name="RouteReason">
+/// <param name="RouteReason">EN:  JA: RouteReason パラメーターです。
 /// [EN] The demo value supplied for <c>RouteReason</c>.
 /// [JA] <c>RouteReason</c> として渡される Demo 値です。
 /// </param>
