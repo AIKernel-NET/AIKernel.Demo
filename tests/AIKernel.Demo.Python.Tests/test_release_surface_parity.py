@@ -4,11 +4,11 @@ AIKernel Demo Python Release Surface Parity Tests
 [EN]
 Purpose:
     Ensures the Python demo package has a visible counterpart for each
-    AIKernel.Demo 0.1.1 C# golden-path demo.
+    AIKernel.Demo 0.1.2 C# golden-path demo.
 
 [JA]
 目的:
-    AIKernel.Demo 0.1.1 の C# golden-path demo それぞれに対して、Python demo
+    AIKernel.Demo 0.1.2 の C# golden-path demo それぞれに対して、Python demo
     package 側にも見える対応面があることを確認します。
 """
 

@@ -2,21 +2,21 @@
 
 [日本語](RELEASE_NOTES-ja.md)
 
-## 0.1.1
+## 0.1.2
 
-**June 10th, 2026 - Verifying the Semantic OS end-to-end.**
-**2026年6月10日--Semantic OS を端から端まで検証する。**
+**June 16, 2026 - Philosophy Becomes Experience.**
+**2026年6月16日--哲学が体験として立ち上がる。**
 
-Verifying the Semantic OS end-to-end: all eight demo layers validate the 0.1.1
-semantic boundary. Semantic OS の端から端までの検証--8 つのデモ層が 0.1.1 の
-セマンティック境界を検証する。
+AIKernel.Demo turns AIKernel concepts, abstractions, and contracts into runnable
+experience. AIKernel.Demo は、AIKernel の概念・抽象・契約を実行可能な体験へ
+変換する。
 
-AIKernel.Demo 0.1.1 is the release validation workspace for the published
-AIKernel 0.1.1 package family. It is not published as a NuGet or PyPI package;
+AIKernel.Demo 0.1.2 is the release validation workspace for the published
+AIKernel 0.1.2 package family. It is not published as a NuGet or PyPI package;
 instead, it demonstrates that the released Core, Control, Providers, Wasm, and
 Tools packages compose through their public contracts.
 
-- Align Demo package references to the official AIKernel 0.1.1 package family.
+- Align Demo package references to the official AIKernel 0.1.2 package family.
 - Consume `AIKernel.Providers.Standard` and `AIKernel.Wasm.WebGpuComputeProvider`
   by their published package IDs.
 - Keep Console, WebApi, Wasm, OS provider, VFS, PDP, pipeline, replay, and Python

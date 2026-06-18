@@ -3,7 +3,7 @@ AIKernel Demo Release Surfaces
 
 [EN]
 Purpose:
-    One-to-one Python teaching surfaces for the AIKernel.Demo 0.1.1 C# demo
+    One-to-one Python teaching surfaces for the AIKernel.Demo 0.1.2 C# demo
     projects.
 
 Runtime Specifications and Prerequisites:
@@ -19,7 +19,7 @@ Architectural Intent:
 
 [JA]
 目的:
-    AIKernel.Demo 0.1.1 の C# demo project に 1 対 1 で対応する Python 教材面です。
+    AIKernel.Demo 0.1.2 の C# demo project に 1 対 1 で対応する Python 教材面です。
 
 実行仕様と前提条件:
     これらの helper は決定論的な dry-run demo です。外部 service、model download、
@@ -275,10 +275,10 @@ def run_cuda_demo(is_windows: bool = False) -> DemoSurfaceResult:
 
 def run_all_release_surfaces() -> tuple[DemoSurfaceResult, ...]:
     """[EN]
-    Runs the Python counterparts for all eight AIKernel.Demo 0.1.1 C# demos.
+    Runs the Python counterparts for all eight AIKernel.Demo 0.1.2 C# demos.
 
     [JA]
-    AIKernel.Demo 0.1.1 の 8 つの C# demo に対応する Python surface をすべて
+    AIKernel.Demo 0.1.2 の 8 つの C# demo に対応する Python surface をすべて
     実行します。
     """
 

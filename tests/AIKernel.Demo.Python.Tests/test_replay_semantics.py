@@ -7,7 +7,7 @@ Purpose:
 
 Runtime Specifications and Prerequisites:
     This module is intentionally lightweight and deterministic. It is used as a
-    learning artifact for the AIKernel 0.1.1 release line, where semantic
+    learning artifact for the AIKernel 0.1.2 release line, where semantic
     structure, policy decisions, routing, execution, and replay are kept visible.
 
 Architectural Intent:
@@ -21,7 +21,7 @@ Architectural Intent:
 
 実行仕様と前提条件:
     この module は軽量かつ決定論的であることを意図しています。AIKernel
-    0.1.1 release line の学習教材として、semantic structure、policy
+    0.1.2 release line の学習教材として、semantic structure、policy
     decision、routing、execution、replay の境界が見えるようにしています。
 
 アーキテクチャ意図:

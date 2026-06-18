@@ -71,9 +71,9 @@ WebGPU vector addition through deterministic CPU fallback.
 dotnet test tests/AIKernel.Demo.Tests/AIKernel.Demo.Tests.csproj -c Release --filter WasmDemoSurfaceTests
 ```
 
-## Run 0.1.1 Coverage Demos
+## Run 0.1.2 Coverage Demos
 
-These demos cover the major 0.1.1 package family without external network calls.
+These demos cover the major 0.1.2 package family without external network calls.
 They are intended to show AIKernel as an OS-shaped runtime surface.
 `AIKernel.Demo.Contracts` also constructs `AIKernel.Dtos.Execution.HashChain`
 directly so the execution DTO boundary is visible without entering Core
@@ -96,7 +96,7 @@ Windows-native CUDA environments.
 Install and exercise it through the `aik` command:
 
 ```powershell
-dotnet tool install -g AIKernel.Tools.CLI --version 0.1.1
+dotnet tool install -g AIKernel.Tools.CLI --version 0.1.2
 aik runtime ping
 aik system info
 aik system vfs --vfs-root .

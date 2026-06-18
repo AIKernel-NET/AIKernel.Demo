@@ -72,9 +72,9 @@ CPU fallback 経由の WebGPU vector addition を確認します。
 dotnet test tests/AIKernel.Demo.Tests/AIKernel.Demo.Tests.csproj -c Release --filter WasmDemoSurfaceTests
 ```
 
-## 0.1.1 Coverage Demo の実行
+## 0.1.2 Coverage Demo の実行
 
-これらの Demo は、外部 network call なしで 0.1.1 package family の主要部分を
+これらの Demo は、外部 network call なしで 0.1.2 package family の主要部分を
 カバーします。AIKernel を OS-shaped runtime surface として理解するための入口です。
 `AIKernel.Demo.Contracts` では `AIKernel.Dtos.Execution.HashChain` も直接生成し、
 Core runtime internal に入らず execution DTO boundary を確認できるようにしています。
@@ -96,7 +96,7 @@ CUDA demo は workspace と一緒に build できますが、Windows native CUDA
 `aik` command として install し、OS command surface を直接確認します。
 
 ```powershell
-dotnet tool install -g AIKernel.Tools.CLI --version 0.1.1
+dotnet tool install -g AIKernel.Tools.CLI --version 0.1.2
 aik runtime ping
 aik system info
 aik system vfs --vfs-root .
