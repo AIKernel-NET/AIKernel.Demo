@@ -12,7 +12,14 @@ namespace AIKernel.Demo.Os;
 /// </summary>
 public sealed class StandardProviderDemoService : Abstractions.IStandardProviderDemoSurface
 {
-    /// <summary>EN: Documentation for public API. JA: RunAsync を実行します。</summary>
+    /// <summary>
+    /// [EN] Runs the standard-provider demo through the public provider package surface.
+    /// [JA] 公開 Provider package surface を通じて standard-provider demo を実行します。
+    /// </summary>
+    /// <returns>
+    /// [EN] A deterministic result that shows compute, process, and scheduler boundaries.
+    /// [JA] compute、process、scheduler の境界を示す決定論的な結果です。
+    /// </returns>
     /// <inheritdoc />
     public async Task<StandardProviderDemoResult> RunAsync()
     {

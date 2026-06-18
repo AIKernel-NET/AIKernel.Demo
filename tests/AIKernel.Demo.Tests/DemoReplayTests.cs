@@ -22,6 +22,10 @@ public sealed class DemoReplayTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void HashChainIsDeterministic()
     {
         var deltas = new[]
@@ -48,6 +52,10 @@ public sealed class DemoReplayTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void ChangingOneDeltaChangesFinalHash()
     {
         var first = DemoReplayLog.FromDeltas(
@@ -71,6 +79,10 @@ public sealed class DemoReplayTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void ReplayEntriesSeparateEntryHashAndChainHash()
     {
         var log = DemoReplayLog.FromDeltas(
@@ -94,6 +106,10 @@ public sealed class DemoReplayTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void CanonicalPayloadNormalizesWhitespace()
     {
         var first = DemoHashChain.CanonicalizePayload(" normalize ", "raw\r\n->trimmed ", " T+0000 ");

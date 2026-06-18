@@ -21,6 +21,10 @@ public sealed class DemoExecutionGraphTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void FromStepsBuildsLinearGraph()
     {
         var graph = DemoExecutionGraph.FromSteps(["normalize", "provider"]);
@@ -39,6 +43,10 @@ public sealed class DemoExecutionGraphTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void TraverseReturnsNodesInOrder()
     {
         var graph = DemoExecutionGraph.FromSteps(["normalize", "structure", "provider"]);
@@ -57,6 +65,10 @@ public sealed class DemoExecutionGraphTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void TraverseReturnsUnderlyingNodes()
     {
         var graph = DemoExecutionGraph.FromSteps(["normalize", "provider"]);
@@ -73,6 +85,10 @@ public sealed class DemoExecutionGraphTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void NodeIdsFollowCanonicalFormat()
     {
         var graph = DemoExecutionGraph.FromSteps(["normalize", "provider"]);

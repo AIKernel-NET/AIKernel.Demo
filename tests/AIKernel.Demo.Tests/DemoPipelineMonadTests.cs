@@ -21,6 +21,14 @@ public sealed class DemoPipelineMonadTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
+    /// <returns>
+    /// [EN] A task that completes after the deterministic test assertion finishes.
+    /// [JA] 決定論的なテスト検証が完了したときに完了するタスクです。
+    /// </returns>
     public async Task RunAsyncComposesPipelineWithLinqQuerySyntax()
     {
         var result = await DemoPipelineMonad.RunAsync(" hello ");
@@ -38,6 +46,14 @@ public sealed class DemoPipelineMonadTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
+    /// <returns>
+    /// [EN] A task that completes after the deterministic test assertion finishes.
+    /// [JA] 決定論的なテスト検証が完了したときに完了するタスクです。
+    /// </returns>
     public async Task RunAsyncNormalizesInputBeforeCompileAndExecute()
     {
         var result = await DemoPipelineMonad.RunAsync("  hello  ");
@@ -55,6 +71,14 @@ public sealed class DemoPipelineMonadTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
+    /// <returns>
+    /// [EN] A task that completes after the deterministic test assertion finishes.
+    /// [JA] 決定論的なテスト検証が完了したときに完了するタスクです。
+    /// </returns>
     public async Task RunAsyncFailsClosedWhenInputIsNull()
     {
         var result = await DemoPipelineMonad.RunAsync(null!);

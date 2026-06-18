@@ -30,6 +30,10 @@ public sealed class DemoHostingTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void KernelHostBuildsSuccessfully()
     {
         using var host = DemoKernelHost.Build(new DemoKernelModule(), new DemoProviderModule());
@@ -50,6 +54,10 @@ public sealed class DemoHostingTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void KernelCanBeRetrieved()
     {
         using var host = DemoKernelHost.Build(new DemoKernelModule(), new DemoProviderModule());
@@ -70,6 +78,14 @@ public sealed class DemoHostingTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
+    /// <returns>
+    /// [EN] A task that completes after the deterministic test assertion finishes.
+    /// [JA] 決定論的なテスト検証が完了したときに完了するタスクです。
+    /// </returns>
     public async Task PipelineExecutesDeterministically()
     {
         var first = await DemoHostingBootstrap.ExecuteSimplePipelineAsync(Dsl);

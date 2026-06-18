@@ -14,6 +14,14 @@ public sealed class WasmDemoSurfaceTests
     /// [JA] Demo が Core process contract を通じて WASM process Provider を使用することを確認します。
     /// </summary>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
+    /// <returns>
+    /// [EN] A task that completes after the deterministic test assertion finishes.
+    /// [JA] 決定論的なテスト検証が完了したときに完了するタスクです。
+    /// </returns>
     public async Task RunProcessLifecycleAsyncCoversWasmProcessProvider()
     {
         var result = await WasmDemoSurface.RunProcessLifecycleAsync();
@@ -29,6 +37,14 @@ public sealed class WasmDemoSurfaceTests
     /// [JA] Demo が deterministic CPU fallback を通じて WebGPU compute を実行することを確認します。
     /// </summary>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
+    /// <returns>
+    /// [EN] A task that completes after the deterministic test assertion finishes.
+    /// [JA] 決定論的なテスト検証が完了したときに完了するタスクです。
+    /// </returns>
     public async Task RunWebGpuFallbackVectorAddAsyncCoversComputeFallback()
     {
         var result = await WasmDemoSurface.RunWebGpuFallbackVectorAddAsync();

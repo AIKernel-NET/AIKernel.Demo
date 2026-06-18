@@ -21,6 +21,10 @@ public sealed class ReplaySummaryFormatterTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void FormatFailsClosedForNullReplayHash()
     {
         var summary = ReplaySummaryFormatter.Format(null, 4);
@@ -37,6 +41,10 @@ public sealed class ReplaySummaryFormatterTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void FormatShowsShortReplayHash()
     {
         var summary = ReplaySummaryFormatter.Format("1234567890abcdef", 4);
@@ -53,6 +61,10 @@ public sealed class ReplaySummaryFormatterTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void FormatFailsClosedForEmptyReplayHash()
     {
         var summary = ReplaySummaryFormatter.Format(string.Empty, 4);
@@ -69,6 +81,10 @@ public sealed class ReplaySummaryFormatterTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void FormatKeepsShortReplayHashAsIs()
     {
         var summary = ReplaySummaryFormatter.Format("abc", 2);
