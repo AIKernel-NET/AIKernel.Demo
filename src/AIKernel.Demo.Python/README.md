@@ -3,7 +3,7 @@
 Python teaching/demo port of the AIKernel.Demo C# samples.
 
 This is not a production runtime. It is a compact, contract-pure demonstration
-of the AIKernel 0.1.1 ideas:
+of the AIKernel 0.1.2 ideas:
 
 - Interface-Led Architecture through small DTOs and `Protocol` contracts.
 - Deterministic Replay through `DemoSemanticDelta`, `DemoReplayLog`, and
@@ -28,7 +28,7 @@ so no package install is required for local validation.
 
 | Module | Role |
 | --- | --- |
-| `release_surfaces` | One-to-one Python counterparts for the eight 0.1.1 C# golden-path demos. |
+| `release_surfaces` | One-to-one Python counterparts for the eight 0.1.2 C# golden-path demos. |
 | `execution` | Deterministic graph and node DTOs plus the tiny execution engine. |
 | `kernel` | Task scheduling, provider routing, LLM output mock, and kernel run DTO. |
 | `pipelines` | Default pipeline catalog and Python monad-style composition demo. |
@@ -44,7 +44,7 @@ so no package install is required for local validation.
 
 ## C# / Python Pairing
 
-The 0.1.1 release demos are paired across languages. C# projects demonstrate
+The 0.1.2 release demos are paired across languages. C# projects demonstrate
 the package-facing .NET surface, while `release_surfaces` gives Python readers
 the same dry-run teaching map without external network calls, native CUDA
 loading, model downloads, or browser WebGPU requirements.

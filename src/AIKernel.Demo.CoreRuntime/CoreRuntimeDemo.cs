@@ -25,7 +25,7 @@ public static class CoreRuntimeDemo
     /// [EN] The returned lines are a deterministic teaching log rather than a benchmark. Each line names one contract boundary that application code can compose without depending on Core internals.
     /// [JA] 返却される行は benchmark ではなく、決定論的な教材ログです。各行は application code が Core internal に依存せず合成できる contract boundary を示します。
     /// </remarks>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] A readable log describing the Core runtime surface touched by the demo.
     /// [JA] デモが触れた Core runtime surface を説明する読みやすいログです。
     /// </returns>

@@ -16,7 +16,7 @@ public static class StandardProviderDemoSurface
     /// [EN] Runs a deterministic standard-provider demo covering compute, process supervision, and scheduling.
     /// [JA] compute、process supervision、scheduling を扱う決定論的な standard-provider Demo を実行します。
     /// </summary>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] A compact snapshot of observable provider behavior.
     /// [JA] 観測可能な Provider 動作をまとめた小さな snapshot です。
     /// </returns>
@@ -28,27 +28,27 @@ public static class StandardProviderDemoSurface
 /// [EN] Result snapshot for the standard-provider demo.
 /// [JA] standard-provider Demo の result snapshot です。
 /// </summary>
-/// <param name="ComputeProviderId">
+/// <param name="ComputeProviderId">EN:  JA: ComputeProviderId パラメーターです。
 /// [EN] The provider id used by the CPU compute demo.
 /// [JA] CPU compute Demo で使用した Provider id です。
 /// </param>
-/// <param name="VectorAdd">
+/// <param name="VectorAdd">EN:  JA: VectorAdd パラメーターです。
 /// [EN] Deterministic vector-add output.
 /// [JA] 決定論的な vector-add 出力です。
 /// </param>
-/// <param name="ProcessId">
+/// <param name="ProcessId">EN:  JA: ProcessId パラメーターです。
 /// [EN] Created logical process id.
 /// [JA] 作成された logical process id です。
 /// </param>
-/// <param name="ProcessState">
+/// <param name="ProcessState">EN:  JA: ProcessState パラメーターです。
 /// [EN] Final logical process state.
 /// [JA] 最終的な logical process state です。
 /// </param>
-/// <param name="ScheduledJobName">
+/// <param name="ScheduledJobName">EN:  JA: ScheduledJobName パラメーターです。
 /// [EN] Safe scheduled command example.
 /// [JA] 安全な scheduled command example です。
 /// </param>
-/// <param name="ScheduledInterval">
+/// <param name="ScheduledInterval">EN:  JA: ScheduledInterval パラメーターです。
 /// [EN] Scheduled interval used by the demo.
 /// [JA] Demo で使用した scheduled interval です。
 /// </param>

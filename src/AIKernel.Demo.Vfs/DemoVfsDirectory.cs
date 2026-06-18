@@ -14,7 +14,7 @@ public sealed record DemoVfsDirectory
     /// [EN] Executes a deterministic operation on the demo contract surface.
     /// [JA] Demo 契約サーフェス上で決定論的な操作を実行します。
     /// </summary>
-    /// <param name="path">
+    /// <param name="path">EN:  JA: path パラメーターです。
     /// [EN] The demo value supplied for <c>path</c>.
     /// [JA] <c>path</c> として渡される Demo 値です。
     /// </param>

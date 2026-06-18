@@ -2,7 +2,7 @@
 
 [日本語 README](README-ja.md)
 
-AIKernel.Demo is the user-facing sample workspace for the AIKernel 0.1.1 package
+AIKernel.Demo is the user-facing sample workspace for the AIKernel 0.1.2 package
 family. It makes AIKernel.Core abstractions visible through runnable console,
 API-host, browser, VFS, PDP, pipeline, and replay-inspection demos.
 
@@ -23,7 +23,7 @@ modules, VFS, PDP, pipelines, and Replay inspection without putting demo-only
 code into contract or runtime repositories.
 
 The repository marks the transition from the completed 0.1.0 prototype
-validation phase to the 0.1.1 release line, where Demo consumes the published
+validation phase to the 0.1.2 release line, where Demo consumes the published
 Core, Control, Providers, Wasm, and Tools package contracts.
 
 Demo is a consumer. Runtime execution engines belong in AIKernel.Control.
@@ -81,7 +81,7 @@ Release notes:
 - `AIKernel.Demo.Python` - Python teaching/demo port of the same contract
   semantics: DSL parsing, monad-style pipelines, VFS snapshots, semantic
   deltas, deterministic replay, and one-to-one release surfaces for the eight
-  0.1.1 C# golden-path demos.
+  0.1.2 C# golden-path demos.
 
 ## Documentation
 
@@ -100,7 +100,7 @@ Japanese:
 ## Quick Start
 
 Start with the release build, then run the smallest demos that prove the public
-0.1.1 package surfaces are available. These commands do not require external
+0.1.2 package surfaces are available. These commands do not require external
 network access, secrets, model downloads, or native CUDA hardware.
 
 First demo to run: `AIKernel.Demo.CoreRuntime`.
@@ -116,7 +116,7 @@ Common project properties are centralized in `Directory.Build.props`.
 
 ## Run the Demo Map
 
-Use this order when you want to understand the 0.1.1 package family as an
+Use this order when you want to understand the 0.1.2 package family as an
 OS-shaped runtime rather than as isolated samples.
 
 | Step | Demo | What the user should learn |
@@ -153,7 +153,7 @@ through `PackageReference` by the in-process demo projects. Install it as the
 `aik` command and run the OS command surface directly:
 
 ```powershell
-dotnet tool install -g AIKernel.Tools.CLI --version 0.1.1
+dotnet tool install -g AIKernel.Tools.CLI --version 0.1.2
 aik runtime ping
 aik system info
 aik system vfs --vfs-root .
@@ -167,16 +167,16 @@ deterministically by the TaskManager, Providers declare replaceable
 Capabilities, LLMs propose while PDP makes final decisions, and replay captures
 all material needed to rerun the same execution.
 
-The 0.1.1 release includes contract-alignment smoke paths in
+The 0.1.2 release includes contract-alignment smoke paths in
 `AIKernel.Demo.Contracts` and `AIKernel.Demo.Pipelines`: they construct execution
 hash-chain data through `AIKernel.Dtos.Execution.HashChain`, routing data through
 `AIKernel.Dtos.Routing.KernelProviderRoutingDecision`, and DSL semantic IR
 through `AIKernel.Dtos.Dsl`. Demo code remains a consumer of AIKernel.NET
 contracts and does not depend on Core internal DSL/History runtime types.
 
-For the 0.1.1 release, `AIKernelPackageVersion` and the Core, Control, Cuda,
+For the 0.1.2 release, `AIKernelPackageVersion` and the Core, Control, Cuda,
 Providers, Wasm, and Tools package version properties point to the published
-0.1.1 package family. Demo remains a release validation workspace rather than a
+0.1.2 package family. Demo remains a release validation workspace rather than a
 package that is published independently.
 
 ## Contributor Guidelines

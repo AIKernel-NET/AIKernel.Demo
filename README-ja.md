@@ -2,7 +2,7 @@
 
 [English README](README.md)
 
-AIKernel.Demo は、AIKernel 0.1.1 package family の利用者向け sample workspace です。
+AIKernel.Demo は、AIKernel 0.1.2 package family の利用者向け sample workspace です。
 AIKernel.Core の抽象を、console、API host、browser、VFS、PDP、pipeline、
 replay-inspection demo として実際に見える形にします。
 
@@ -21,7 +21,7 @@ pipeline、Replay inspection をどのように合成するかを示します。
 contract repository や runtime repository に入れません。
 
 この repository は、完了した 0.1.0 prototype validation phase から、公開済みの
-Core、Control、Providers、Wasm、Tools package contract を消費する 0.1.1 release line
+Core、Control、Providers、Wasm、Tools package contract を消費する 0.1.2 release line
 への移行を示します。
 
 Demo は利用者側です。Runtime execution engine は AIKernel.Control に属します。
@@ -77,7 +77,7 @@ Demo は利用者側です。Runtime execution engine は AIKernel.Control に�
 
 ## クイックスタート
 
-まず Release build を行い、次に 0.1.1 の public package surface が利用できることを
+まず Release build を行い、次に 0.1.2 の public package surface が利用できることを
 最小 demo で確認します。以下のコマンドは外部 network、secret、model download、
 native CUDA hardware を必要としません。
 
@@ -94,7 +94,7 @@ dotnet run --project src/AIKernel.Demo.StandardProviders/AIKernel.Demo.StandardP
 
 ## Demo Map の実行順
 
-AIKernel 0.1.1 package family を、個別 sample ではなく OS-shaped runtime として
+AIKernel 0.1.2 package family を、個別 sample ではなく OS-shaped runtime として
 理解したい場合は、以下の順番で実行してください。
 
 | Step | Demo | 利用者が理解できること |
@@ -131,7 +131,7 @@ demo project から `PackageReference` で消費する対象ではありませ�
 として install し、OS command surface を直接実行します。
 
 ```powershell
-dotnet tool install -g AIKernel.Tools.CLI --version 0.1.1
+dotnet tool install -g AIKernel.Tools.CLI --version 0.1.2
 aik runtime ping
 aik system info
 aik system vfs --vfs-root .
@@ -145,15 +145,15 @@ Demo は Core の design decision を意図的に反映します。Pipeline は 
 提案者で PDP が最終決定者です。Replay は同じ execution を再実行するために必要な
 material を保存します。
 
-0.1.1 release には `AIKernel.Demo.Contracts` と `AIKernel.Demo.Pipelines` の
+0.1.2 release には `AIKernel.Demo.Contracts` と `AIKernel.Demo.Pipelines` の
 contract-alignment smoke path が含まれます。Execution hash-chain data は
 `AIKernel.Dtos.Execution.HashChain`、Routing data は
 `AIKernel.Dtos.Routing.KernelProviderRoutingDecision`、DSL semantic IR は
 `AIKernel.Dtos.Dsl` を通じて構築します。Demo code は AIKernel.NET contracts の
 consumer であり、Core internal DSL / History runtime type には依存しません。
 
-0.1.1 release では、`AIKernelPackageVersion` と Core、Control、Cuda、Providers、
-Wasm、Tools の package version property は公開済みの 0.1.1 package family を指します。
+0.1.2 release では、`AIKernelPackageVersion` と Core、Control、Cuda、Providers、
+Wasm、Tools の package version property は公開済みの 0.1.2 package family を指します。
 Demo は個別に package 公開する対象ではなく、release validation workspace として扱います。
 
 ## コントリビュータ向けガイドライン

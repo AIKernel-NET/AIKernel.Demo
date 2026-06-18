@@ -26,6 +26,10 @@ public sealed class DemoPipelineContractTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void DefaultPipelinePublishesRoutingAndDslContractAlignment()
     {
         var run = DemoPipelineCatalog.CreateDefaultRun();
@@ -49,6 +53,10 @@ public sealed class DemoPipelineContractTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void ContractAlignmentUsesOnlyPublicDemoContractDto()
     {
         var run = DemoPipelineCatalog.CreateDefaultRun();
@@ -69,6 +77,10 @@ public sealed class DemoPipelineContractTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void PipelineIdFollowsCanonicalFormat()
     {
         var run = DemoPipelineCatalog.CreateDefaultRun();
@@ -85,6 +97,10 @@ public sealed class DemoPipelineContractTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void ContractAlignmentFieldsAreNonNull()
     {
         var run = DemoPipelineCatalog.CreateDefaultRun();
@@ -104,6 +120,10 @@ public sealed class DemoPipelineContractTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void DemoPipelineCatalogReturnsContractDto()
     {
         var run = DemoPipelineCatalog.CreateDefaultRun();

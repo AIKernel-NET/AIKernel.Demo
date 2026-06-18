@@ -21,6 +21,10 @@ public sealed class DemoSemanticDeltaTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void ApplyingDeltasUpdatesState()
     {
         var state = DemoSemanticState.FromDeltas(
@@ -43,6 +47,10 @@ public sealed class DemoSemanticDeltaTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void ApplyReturnsNewState()
     {
         var first = new DemoSemanticState();
@@ -62,6 +70,10 @@ public sealed class DemoSemanticDeltaTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void ApplyingDeltasUpdatesSemanticSlots()
     {
         var state = DemoSemanticState.FromDeltas(
@@ -85,6 +97,10 @@ public sealed class DemoSemanticDeltaTests
     /// [JA] このテストは Demo 契約から読み手が期待すべき観測可能な振る舞いを固定します。
     /// </remarks>
     [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
     public void SequenceOrderMatters()
     {
         var first = DemoSemanticState.FromDeltas(

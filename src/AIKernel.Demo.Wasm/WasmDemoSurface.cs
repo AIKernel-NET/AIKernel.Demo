@@ -20,7 +20,7 @@ public static class WasmDemoSurface
     /// [EN] The operation is documented at the member boundary so generated reference pages can explain the runtime intent without changing behavior.
     /// [JA] この操作は member boundary で文書化されるため、振る舞いを変えずに生成 reference page が runtime intent を説明できます。
     /// </remarks>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] The deterministic result produced by this demo member.
     /// [JA] この Demo メンバーが生成する決定論的な結果です。
     /// </returns>
@@ -31,7 +31,7 @@ public static class WasmDemoSurface
     /// [EN] Runs the WASM process provider through the Core process abstraction.
     /// [JA] Core process abstraction を通じて WASM process Provider を実行します。
     /// </summary>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] A deterministic snapshot of the WASM process lifecycle.
     /// [JA] WASM process lifecycle の決定論的 snapshot です。
     /// </returns>
@@ -42,7 +42,7 @@ public static class WasmDemoSurface
     /// [EN] Runs a WebGPU compute demo using the deterministic CPU fallback path.
     /// [JA] deterministic CPU fallback path を使って WebGPU compute Demo を実行します。
     /// </summary>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] A deterministic vector-add result produced through the WebGPU provider boundary.
     /// [JA] WebGPU Provider 境界を通じて生成された決定論的な vector-add result です。
     /// </returns>
@@ -54,19 +54,19 @@ public static class WasmDemoSurface
 /// [EN] Result snapshot for the WASM process lifecycle demo.
 /// [JA] WASM process lifecycle Demo の result snapshot です。
 /// </summary>
-/// <param name="ProcessId">
+/// <param name="ProcessId">EN:  JA: ProcessId パラメーターです。
 /// [EN] Created WASM process id.
 /// [JA] 作成された WASM process id です。
 /// </param>
-/// <param name="ProcessName">
+/// <param name="ProcessName">EN:  JA: ProcessName パラメーターです。
 /// [EN] Created WASM process name.
 /// [JA] 作成された WASM process name です。
 /// </param>
-/// <param name="RunningState">
+/// <param name="RunningState">EN:  JA: RunningState パラメーターです。
 /// [EN] State observed after start.
 /// [JA] start 後に観測された state です。
 /// </param>
-/// <param name="FinalState">
+/// <param name="FinalState">EN:  JA: FinalState パラメーターです。
 /// [EN] State observed after stop.
 /// [JA] stop 後に観測された state です。
 /// </param>
@@ -80,15 +80,15 @@ public sealed record WasmProcessDemoResult(
 /// [EN] Result snapshot for the WebGPU fallback vector-add demo.
 /// [JA] WebGPU fallback vector-add Demo の result snapshot です。
 /// </summary>
-/// <param name="ProviderId">
+/// <param name="ProviderId">EN:  JA: ProviderId パラメーターです。
 /// [EN] WebGPU provider id.
 /// [JA] WebGPU Provider id です。
 /// </param>
-/// <param name="UsingCpuFallback">
+/// <param name="UsingCpuFallback">EN:  JA: UsingCpuFallback パラメーターです。
 /// [EN] Whether the provider used CPU fallback.
 /// [JA] Provider が CPU fallback を使用したかどうかです。
 /// </param>
-/// <param name="VectorAdd">
+/// <param name="VectorAdd">EN:  JA: VectorAdd パラメーターです。
 /// [EN] Deterministic vector-add output.
 /// [JA] 決定論的な vector-add 出力です。
 /// </param>

@@ -18,7 +18,7 @@ public interface IWasmDemoSurface
     /// [EN] Use this member when teaching how a WASM module is represented as a Core process.
     /// [JA] WASM module が Core process として表現される方法を説明するときにこの member を使います。
     /// </remarks>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] WASM process result.
     /// [JA] WASM process result です。
     /// </returns>
@@ -32,7 +32,7 @@ public interface IWasmDemoSurface
     /// [EN] Use this member when teaching compute-provider fallback behavior without requiring a real browser GPU.
     /// [JA] 実 browser GPU を要求せず compute-provider fallback behavior を説明するときにこの member を使います。
     /// </remarks>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] WebGPU fallback result.
     /// [JA] WebGPU fallback result です。
     /// </returns>

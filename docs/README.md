@@ -13,14 +13,28 @@ AIKernel.Monolith is the official AIOS distribution now in development. It is
 planned as the standard reference distribution that integrates all SDK layers
 after the 0.1.x line stabilizes; Demo remains the learning path for those layers.
 
+## Cross-Repository Alignment
+
+Shared repository boundaries, 0.1.1.1 local NuGet versioning, the
+NuGet-only / no-PyPI rule for this validation line, and the v0.1.2
+NuGet + PyPI release assumption are defined by
+[AIKernel Repository Alignment v0.1.1.1](https://github.com/AIKernel-NET/AIKernel.NET/blob/main/docs/development/repository-alignment-v0.1.1.1.md).
+When a change crosses repositories, start with the
+[Cross-Repository Developer Guide v0.1.1.1](https://github.com/AIKernel-NET/AIKernel.NET/blob/main/docs/development/cross-repository-developer-guide-v0.1.1.1.md).
+
+Demo owns runnable examples that consume the package family. It must not define
+runtime contracts, production package ownership, or shared scenario semantics.
+
 ## Start Here
 
 - [User Guide](user-guide/index.md)
 - [User Guide 日本語](user-guide/index-ja.md)
 - [Architecture](architecture/index.md)
 - [Pipelines](pipelines/index.md)
+- [Educational Comment Guidelines](development/educational-comments.md)
 - [Architecture 日本語](architecture/index-ja.md)
 - [Pipelines 日本語](pipelines/index-ja.md)
+- [教材向けコメント規約 日本語](development/educational-comments-ja.md)
 
 ## Which Page Should I Read?
 
@@ -29,6 +43,8 @@ after the 0.1.x line stabilizes; Demo remains the learning path for those layers
   Demo does not implement runtime behavior.
 - Read Pipelines when you want to understand the DAG-style sample execution
   model.
+- Read Educational Comment Guidelines before adding or reviewing public demo
+  members, because Demo comments are part of the teaching material.
 
 ## Demo Principles
 

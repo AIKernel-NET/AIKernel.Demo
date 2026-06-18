@@ -10,7 +10,7 @@ public interface IStandardProviderDemoSurface
     /// [EN] Runs the standard-provider demo.
     /// [JA] standard-provider Demo を実行します。
     /// </summary>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] Standard-provider demo result.
     /// [JA] standard-provider Demo result です。
     /// </returns>

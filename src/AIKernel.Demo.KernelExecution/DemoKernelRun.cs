@@ -13,19 +13,19 @@ namespace AIKernel.Demo.KernelExecution;
 /// [EN] Demo types intentionally keep contract boundaries visible instead of hiding semantic structure, policy, routing, execution, or replay behind framework magic.
 /// [JA] Demo 型は semantic structure、policy、routing、execution、replay の境界を framework magic で隠さず、見える形に保ちます。
 /// </remarks>
-/// <param name="ExecutionGraph">
+/// <param name="ExecutionGraph">EN:  JA: ExecutionGraph パラメーターです。
 /// [EN] The demo value supplied for <c>ExecutionGraph</c>.
 /// [JA] <c>ExecutionGraph</c> として渡される Demo 値です。
 /// </param>
-/// <param name="SemanticDeltas">
+/// <param name="SemanticDeltas">EN:  JA: SemanticDeltas パラメーターです。
 /// [EN] The demo value supplied for <c>SemanticDeltas</c>.
 /// [JA] <c>SemanticDeltas</c> として渡される Demo 値です。
 /// </param>
-/// <param name="ReplayLog">
+/// <param name="ReplayLog">EN:  JA: ReplayLog パラメーターです。
 /// [EN] The demo value supplied for <c>ReplayLog</c>.
 /// [JA] <c>ReplayLog</c> として渡される Demo 値です。
 /// </param>
-/// <param name="FinalHash">
+/// <param name="FinalHash">EN:  JA: FinalHash パラメーターです。
 /// [EN] The demo value supplied for <c>FinalHash</c>.
 /// [JA] <c>FinalHash</c> として渡される Demo 値です。
 /// </param>

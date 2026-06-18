@@ -14,7 +14,7 @@ public static class Program
     /// [EN] Runs the provider demo and writes each descriptor-oriented log line.
     /// [JA] provider demo を実行し、descriptor を中心にしたログの各行を書き込みます。
     /// </summary>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] A task representing the asynchronous console run.
     /// [JA] 非同期 console 実行を表す task です。
     /// </returns>

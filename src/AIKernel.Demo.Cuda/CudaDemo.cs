@@ -22,7 +22,7 @@ public static class CudaDemo
     /// [EN] The request is intentionally minimal and does not bind a native model. It teaches the LibTorch capability descriptor and request validation surface without loading GPU resources.
     /// [JA] request は意図的に最小化され、native model を bind しません。GPU resource を読み込まずに LibTorch capability descriptor と request validation surface を学ぶためのものです。
     /// </remarks>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] A deterministic CUDA teaching log, or a deterministic skip log outside Windows.
     /// [JA] 決定論的な CUDA 教材ログ、または Windows 以外での決定論的 skip ログです。
     /// </returns>

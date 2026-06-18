@@ -26,7 +26,7 @@ public static class ToolsDemo
     /// [EN] The temporary replay file and fixed chat-history records make the example repeatable. The exporter lines demonstrate how operational evidence can be rendered into Markdown and ROM-style artifacts.
     /// [JA] temporary replay file と固定 chat-history record により、この例は再実行可能です。exporter の行は operational evidence を Markdown と ROM-style artifact に変換する方法を示します。
     /// </remarks>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] A deterministic tooling log that can be compared across runs.
     /// [JA] 実行間で比較できる決定論的 tooling log です。
     /// </returns>

@@ -8,7 +8,7 @@ namespace AIKernel.Demo.Providers.Mock;
 /// [EN] Demo types intentionally keep contract boundaries visible instead of hiding semantic structure, policy, routing, execution, or replay behind framework magic.
 /// [JA] Demo 型は semantic structure、policy、routing、execution、replay の境界を framework magic で隠さず、見える形に保ちます。
 /// </remarks>
-/// <param name="OutputHash">
+/// <param name="OutputHash">EN:  JA: OutputHash パラメーターです。
 /// [EN] The demo value supplied for <c>OutputHash</c>.
 /// [JA] <c>OutputHash</c> として渡される Demo 値です。
 /// </param>

@@ -8,19 +8,19 @@ namespace AIKernel.Demo.Pipelines;
 /// [EN] Demo types intentionally keep contract boundaries visible instead of hiding semantic structure, policy, routing, execution, or replay behind framework magic.
 /// [JA] Demo 型は semantic structure、policy、routing、execution、replay の境界を framework magic で隠さず、見える形に保ちます。
 /// </remarks>
-/// <param name="RoutingProviderId">
+/// <param name="RoutingProviderId">EN:  JA: RoutingProviderId パラメーターです。
 /// [EN] The demo value supplied for <c>RoutingProviderId</c>.
 /// [JA] <c>RoutingProviderId</c> として渡される Demo 値です。
 /// </param>
-/// <param name="RoutingModelId">
+/// <param name="RoutingModelId">EN:  JA: RoutingModelId パラメーターです。
 /// [EN] The demo value supplied for <c>RoutingModelId</c>.
 /// [JA] <c>RoutingModelId</c> として渡される Demo 値です。
 /// </param>
-/// <param name="DslRootType">
+/// <param name="DslRootType">EN:  JA: DslRootType パラメーターです。
 /// [EN] The demo value supplied for <c>DslRootType</c>.
 /// [JA] <c>DslRootType</c> として渡される Demo 値です。
 /// </param>
-/// <param name="DslFirstStepName">
+/// <param name="DslFirstStepName">EN:  JA: DslFirstStepName パラメーターです。
 /// [EN] The demo value supplied for <c>DslFirstStepName</c>.
 /// [JA] <c>DslFirstStepName</c> として渡される Demo 値です。
 /// </param>

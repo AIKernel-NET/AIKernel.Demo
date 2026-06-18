@@ -19,11 +19,11 @@ public static class DemoHostingBootstrap
     /// [EN] Executes a deterministic operation on the demo contract surface.
     /// [JA] Demo 契約サーフェス上で決定論的な操作を実行します。
     /// </summary>
-    /// <param name="dslText">
+    /// <param name="dslText">EN:  JA: dslText パラメーターです。
     /// [EN] The demo value supplied for <c>dslText</c>.
     /// [JA] <c>dslText</c> として渡される Demo 値です。
     /// </param>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] The deterministic result produced by this demo member.
     /// [JA] この Demo メンバーが生成する決定論的な結果です。
     /// </returns>

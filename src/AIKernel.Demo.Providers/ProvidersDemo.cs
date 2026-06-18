@@ -26,7 +26,7 @@ public static class ProvidersDemo
     /// [EN] The provider id and capability id lines teach the registration vocabulary used by dynamic loading, manifests, and capability invocation.
     /// [JA] provider id と capability id の行は、dynamic loading、manifest、capability invocation で使われる registration vocabulary を学ぶためのものです。
     /// </remarks>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] A deterministic dry-run log of official Provider surfaces.
     /// [JA] 公式 Provider surface の決定論的 dry-run ログです。
     /// </returns>

@@ -24,7 +24,7 @@ public static class ContractsDemo
     /// [EN] The UnifiedContextDto line shows orchestration context, the PolicyEvaluationResult line shows governance output, and the HashChain line shows execution replay identity without requiring any runtime service.
     /// [JA] UnifiedContextDto の行は orchestration context、PolicyEvaluationResult の行は governance output、HashChain の行は runtime service なしで execution replay identity を示します。
     /// </remarks>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] A deterministic log of public contract and DTO values.
     /// [JA] public contract と DTO value の決定論的ログです。
     /// </returns>

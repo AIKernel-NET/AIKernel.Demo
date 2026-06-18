@@ -8,19 +8,19 @@ namespace AIKernel.Demo.Semantics;
 /// [EN] Demo types intentionally keep contract boundaries visible instead of hiding semantic structure, policy, routing, execution, or replay behind framework magic.
 /// [JA] Demo 型は semantic structure、policy、routing、execution、replay の境界を framework magic で隠さず、見える形に保ちます。
 /// </remarks>
-/// <param name="StepName">
+/// <param name="StepName">EN:  JA: StepName パラメーターです。
 /// [EN] The demo value supplied for <c>StepName</c>.
 /// [JA] <c>StepName</c> として渡される Demo 値です。
 /// </param>
-/// <param name="Before">
+/// <param name="Before">EN:  JA: Before パラメーターです。
 /// [EN] The demo value supplied for <c>Before</c>.
 /// [JA] <c>Before</c> として渡される Demo 値です。
 /// </param>
-/// <param name="After">
+/// <param name="After">EN:  JA: After パラメーターです。
 /// [EN] The demo value supplied for <c>After</c>.
 /// [JA] <c>After</c> として渡される Demo 値です。
 /// </param>
-/// <param name="Slot">
+/// <param name="Slot">EN:  JA: Slot パラメーターです。
 /// [EN] The demo value supplied for <c>Slot</c>.
 /// [JA] <c>Slot</c> として渡される Demo 値です。
 /// </param>

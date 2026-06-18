@@ -24,7 +24,7 @@ public static class ControlDemo
     /// [EN] The graph contains one dry-run node. That keeps the sample deterministic while still showing how a request flows through the Control engine boundary.
     /// [JA] graph は dry-run node を 1 つだけ持ちます。これにより sample を決定論的に保ちながら、request が Control engine boundary をどう流れるかを示します。
     /// </remarks>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] A readable log containing emulator id, graph id, execution status, and Bonsai surface names.
     /// [JA] emulator id、graph id、execution status、Bonsai surface 名を含む読みやすいログです。
     /// </returns>

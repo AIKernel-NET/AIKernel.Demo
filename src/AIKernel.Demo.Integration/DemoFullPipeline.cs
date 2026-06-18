@@ -26,15 +26,15 @@ public static class DemoFullPipeline
     /// [EN] The operation is documented at the member boundary so generated reference pages can explain the runtime intent without changing behavior.
     /// [JA] この操作は member boundary で文書化されるため、振る舞いを変えずに生成 reference page が runtime intent を説明できます。
     /// </remarks>
-    /// <param name="dslText">
+    /// <param name="dslText">EN:  JA: dslText パラメーターです。
     /// [EN] The demo value supplied for <c>dslText</c>.
     /// [JA] <c>dslText</c> として渡される Demo 値です。
     /// </param>
-    /// <param name="input">
+    /// <param name="input">EN:  JA: input パラメーターです。
     /// [EN] The demo value supplied for <c>input</c>.
     /// [JA] <c>input</c> として渡される Demo 値です。
     /// </param>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] The deterministic result produced by this demo member.
     /// [JA] この Demo メンバーが生成する決定論的な結果です。
     /// </returns>
@@ -71,27 +71,27 @@ public static class DemoFullPipeline
 /// [EN] Demo types intentionally keep contract boundaries visible instead of hiding semantic structure, policy, routing, execution, or replay behind framework magic.
 /// [JA] Demo 型は semantic structure、policy、routing、execution、replay の境界を framework magic で隠さず、見える形に保ちます。
 /// </remarks>
-/// <param name="NodeCount">
+/// <param name="NodeCount">EN:  JA: NodeCount パラメーターです。
 /// [EN] The demo value supplied for <c>NodeCount</c>.
 /// [JA] <c>NodeCount</c> として渡される Demo 値です。
 /// </param>
-/// <param name="SemanticDeltas">
+/// <param name="SemanticDeltas">EN:  JA: SemanticDeltas パラメーターです。
 /// [EN] The demo value supplied for <c>SemanticDeltas</c>.
 /// [JA] <c>SemanticDeltas</c> として渡される Demo 値です。
 /// </param>
-/// <param name="ReplayLog">
+/// <param name="ReplayLog">EN:  JA: ReplayLog パラメーターです。
 /// [EN] The demo value supplied for <c>ReplayLog</c>.
 /// [JA] <c>ReplayLog</c> として渡される Demo 値です。
 /// </param>
-/// <param name="FinalReplayHash">
+/// <param name="FinalReplayHash">EN:  JA: FinalReplayHash パラメーターです。
 /// [EN] The demo value supplied for <c>FinalReplayHash</c>.
 /// [JA] <c>FinalReplayHash</c> として渡される Demo 値です。
 /// </param>
-/// <param name="ProviderId">
+/// <param name="ProviderId">EN:  JA: ProviderId パラメーターです。
 /// [EN] The demo value supplied for <c>ProviderId</c>.
 /// [JA] <c>ProviderId</c> として渡される Demo 値です。
 /// </param>
-/// <param name="PolicyAllowed">
+/// <param name="PolicyAllowed">EN:  JA: PolicyAllowed パラメーターです。
 /// [EN] The demo value supplied for <c>PolicyAllowed</c>.
 /// [JA] <c>PolicyAllowed</c> として渡される Demo 値です。
 /// </param>

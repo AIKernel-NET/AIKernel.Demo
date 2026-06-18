@@ -23,19 +23,19 @@ public sealed class DemoKernel
     /// [EN] Executes a deterministic operation on the demo contract surface.
     /// [JA] Demo 契約サーフェス上で決定論的な操作を実行します。
     /// </summary>
-    /// <param name="taskManager">
+    /// <param name="taskManager">EN:  JA: taskManager パラメーターです。
     /// [EN] The demo value supplied for <c>taskManager</c>.
     /// [JA] <c>taskManager</c> として渡される Demo 値です。
     /// </param>
-    /// <param name="providerRouter">
+    /// <param name="providerRouter">EN:  JA: providerRouter パラメーターです。
     /// [EN] The demo value supplied for <c>providerRouter</c>.
     /// [JA] <c>providerRouter</c> として渡される Demo 値です。
     /// </param>
-    /// <param name="llmController">
+    /// <param name="llmController">EN:  JA: llmController パラメーターです。
     /// [EN] The demo value supplied for <c>llmController</c>.
     /// [JA] <c>llmController</c> として渡される Demo 値です。
     /// </param>
-    /// <param name="executionEngine">
+    /// <param name="executionEngine">EN:  JA: executionEngine パラメーターです。
     /// [EN] The demo value supplied for <c>executionEngine</c>.
     /// [JA] <c>executionEngine</c> として渡される Demo 値です。
     /// </param>
@@ -59,11 +59,11 @@ public sealed class DemoKernel
     /// [EN] The operation is documented at the member boundary so generated reference pages can explain the runtime intent without changing behavior.
     /// [JA] この操作は member boundary で文書化されるため、振る舞いを変えずに生成 reference page が runtime intent を説明できます。
     /// </remarks>
-    /// <param name="graph">
+    /// <param name="graph">EN:  JA: graph パラメーターです。
     /// [EN] The demo value supplied for <c>graph</c>.
     /// [JA] <c>graph</c> として渡される Demo 値です。
     /// </param>
-    /// <returns>
+    /// <returns>EN:  JA: 結果を返します。
     /// [EN] The deterministic result produced by this demo member.
     /// [JA] この Demo メンバーが生成する決定論的な結果です。
     /// </returns>
