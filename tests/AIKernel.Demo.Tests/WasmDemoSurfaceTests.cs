@@ -1,5 +1,7 @@
 using AIKernel.Abstractions.Processes;
 using AIKernel.Demo.Wasm;
+using AIKernel.Dtos.Gpu;
+using AIKernel.Enums;
 
 namespace AIKernel.Demo.Tests;
 
@@ -52,5 +54,42 @@ public sealed class WasmDemoSurfaceTests
         Assert.Equal("webgpu.compute", result.ProviderId);
         Assert.True(result.UsingCpuFallback);
         Assert.Equal([11.0f, 22.0f, 33.0f, 44.0f], result.VectorAdd);
+    }
+
+    /// <summary>
+    /// [EN] Confirms that the demo exposes the canonical rev3 GPU HUD/Aisthesis path as executable documentation.
+    /// [JA] Demo が canonical rev3 GPU HUD/Aisthesis path を実行可能な文書として公開することを確認します。
+    /// </summary>
+    [Fact]
+    /// <summary>
+    /// [EN] Verifies the documented Demo behavior for this deterministic test case.
+    /// [JA] この決定論的なテストケースで文書化された Demo の振る舞いを検証します。
+    /// </summary>
+    /// <returns>
+    /// [EN] A task that completes after the deterministic test assertion finishes.
+    /// [JA] 決定論的なテスト検証が完了したときに完了するタスクです。
+    /// </returns>
+    public async Task RunGpuRev3PipelineAsyncCoversCanonicalHudAisthesisAndSpatialPasses()
+    {
+        var result = await WasmDemoSurface.RunGpuRev3PipelineAsync();
+
+        Assert.Equal("webgpu.compute", result.ProviderId);
+        Assert.Equal(GpuBackend.CpuFallback.ToString(), result.Backend);
+        Assert.True(result.UsingCpuFallback);
+        Assert.Equal(
+            [GpuOperationNames.GpuAisthesisRawFrame, GpuOperationNames.GpuSpatialReasoning, GpuOperationNames.GpuHudComposite],
+            result.PassIds);
+        Assert.True(result.RawAisthesisOnly);
+        Assert.True(result.HudCompositeOffscreen);
+        Assert.True(result.SensorReadbackRequired);
+        Assert.True(result.HudReadbackRequired);
+        Assert.Equal(GpuCanonicalLayouts.FeatureVector.Stride, result.FeatureVector.Count);
+        Assert.Equal(320.0f, result.FeatureVector[0]);
+        Assert.Equal(200.0f, result.FeatureVector[1]);
+        Assert.Equal(GpuCanonicalLayouts.SpatialVector.Stride, result.SpatialVector.Count);
+        Assert.Equal("true", result.Metadata[GpuProviderMetadataKeys.Rev3]);
+        Assert.Equal("topos,route,threat,zoe", result.Metadata[GpuProviderMetadataKeys.AisMatrixOrder]);
+        Assert.Equal("raw-framebuffer", result.Metadata[GpuProviderMetadataKeys.RawCaptureSource]);
+        Assert.Equal("optional-native-or-js", result.Metadata[GpuProviderMetadataKeys.PassBridge]);
     }
 }

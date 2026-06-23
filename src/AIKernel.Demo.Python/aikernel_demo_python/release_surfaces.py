@@ -3,7 +3,7 @@ AIKernel Demo Release Surfaces
 
 [EN]
 Purpose:
-    One-to-one Python teaching surfaces for the AIKernel.Demo 0.1.2 C# demo
+    One-to-one Python teaching surfaces for the AIKernel.Demo 0.1.3 C# demo
     projects.
 
 Runtime Specifications and Prerequisites:
@@ -15,11 +15,11 @@ Architectural Intent:
     The C# demo projects are executable package-coverage samples. This module
     mirrors their public teaching intent in Python so readers can compare the
     same CoreRuntime, Contracts, Control, Providers, StandardProviders, Tools,
-    Wasm, and Cuda concepts across both languages.
+    Wasm, Cuda, and canonical GPU rev3 concepts across both languages.
 
 [JA]
 目的:
-    AIKernel.Demo 0.1.2 の C# demo project に 1 対 1 で対応する Python 教材面です。
+    AIKernel.Demo 0.1.3 の C# demo project に 1 対 1 で対応する Python 教材面です。
 
 実行仕様と前提条件:
     これらの helper は決定論的な dry-run demo です。外部 service、model download、
@@ -28,7 +28,7 @@ Architectural Intent:
 アーキテクチャ意図:
     C# demo project は package coverage を示す実行可能 sample です。この module は
     CoreRuntime、Contracts、Control、Providers、StandardProviders、Tools、Wasm、
-    Cuda の同じ概念を Python 側でも比較できるようにします。
+    Cuda、canonical GPU rev3 の同じ概念を Python 側でも比較できるようにします。
 """
 
 from __future__ import annotations
@@ -227,12 +227,12 @@ def run_tools_demo() -> DemoSurfaceResult:
 
 def run_wasm_demo() -> DemoSurfaceResult:
     """[EN]
-    Mirrors AIKernel.Demo.Wasm with deterministic process and WebGPU fallback
-    vocabulary.
+    Mirrors AIKernel.Demo.Wasm with deterministic process, WebGPU fallback,
+    and canonical GPU rev3 pass vocabulary.
 
     [JA]
-    deterministic process と WebGPU fallback vocabulary を使って AIKernel.Demo.Wasm
-    に対応します。
+    deterministic process、WebGPU fallback、canonical GPU rev3 pass vocabulary
+    を使って AIKernel.Demo.Wasm に対応します。
     """
 
     return DemoSurfaceResult(
@@ -245,6 +245,38 @@ def run_wasm_demo() -> DemoSurfaceResult:
             "memory.surface=linear",
             "fs.surface=wasi-bridge",
             "webgpu.fallback=cpu",
+            "gpu.rev3=true",
+            "gpu.passes=gpu.aisthesis.raw-frame,gpu.spatial-reasoning,gpu.hud.composite",
+            "gpu.raw=raw-framebuffer",
+            "gpu.hud=offscreen-composite",
+            "gpu.matrix=topos,route,threat,zoe",
+        ),
+    )
+
+
+def run_gpu_rev3_demo() -> DemoSurfaceResult:
+    """[EN]
+    Mirrors AIKernel.Demo.Gpu, the direct console entry point for canonical GPU
+    rev3 pass vocabulary.
+
+    [JA]
+    canonical GPU rev3 pass vocabulary の直接 console entry point である
+    AIKernel.Demo.Gpu に対応します。
+    """
+
+    return DemoSurfaceResult(
+        "Gpu",
+        "AIKernel.Demo.Gpu",
+        "aikernel_demo_python.release_surfaces.run_gpu_rev3_demo",
+        (
+            "AIKernel.Demo.Gpu",
+            "backend=CpuFallback; cpuFallback=True",
+            "passes=gpu.aisthesis.raw-frame,gpu.spatial-reasoning,gpu.hud.composite",
+            "rawAisthesisOnly=True",
+            "hudCompositeOffscreen=True",
+            "matrixOrder=topos,route,threat,zoe",
+            "rawCapture=raw-framebuffer",
+            "passBridge=optional-native-or-js",
         ),
     )
 
@@ -275,10 +307,10 @@ def run_cuda_demo(is_windows: bool = False) -> DemoSurfaceResult:
 
 def run_all_release_surfaces() -> tuple[DemoSurfaceResult, ...]:
     """[EN]
-    Runs the Python counterparts for all eight AIKernel.Demo 0.1.2 C# demos.
+    Runs the Python counterparts for all nine AIKernel.Demo 0.1.3 C# demos.
 
     [JA]
-    AIKernel.Demo 0.1.2 の 8 つの C# demo に対応する Python surface をすべて
+    AIKernel.Demo 0.1.3 の 9 つの C# demo に対応する Python surface をすべて
     実行します。
     """
 
@@ -290,5 +322,6 @@ def run_all_release_surfaces() -> tuple[DemoSurfaceResult, ...]:
         run_standard_providers_demo(),
         run_tools_demo(),
         run_wasm_demo(),
+        run_gpu_rev3_demo(),
         run_cuda_demo(),
     )

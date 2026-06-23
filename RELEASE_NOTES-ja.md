@@ -2,6 +2,27 @@
 
 [English](RELEASE_NOTES.md)
 
+## 0.1.3
+
+**June 23, 2026 - The visible OS learns to see the GPU.**
+**2026年6月23日--可視化された OS が GPU の目を得る。**
+
+AIKernel.Demo 0.1.3 は、canonical GPU rev3 設計に対応した release validation
+atlas です。Demo repository は引き続き public contract の consumer ですが、
+raw-framebuffer Aisthesis、spatial reasoning matrix、offscreen HUD composition
+を実行可能ドキュメントとして確認できるようになりました。
+
+- Demo の package reference を canonical AIKernel 0.1.3 package family に揃えました。
+- `gpu.aisthesis.raw-frame`、`gpu.spatial-reasoning`、`gpu.hud.composite` を扱う
+  Wasm GPU rev3 teaching path を追加しました。
+- 同じ canonical GPU rev3 pass sequence を直接実行する console entry point
+  `AIKernel.Demo.Gpu` を追加しました。
+- 自動テストでは CPU fallback を使い、WebGPU demo を決定論的に保ったまま
+  rev3 pass vocabulary を検証します。
+- Python release-surface parity を拡張し、Wasm demo 側に GPU rev3 pass ID、
+  raw framebuffer capture、offscreen HUD composition、
+  `topos,route,threat,zoe` matrix order が見えるようにしました。
+
 ## 0.1.2
 
 **June 16, 2026 - Philosophy Becomes Experience.**

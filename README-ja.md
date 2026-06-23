@@ -2,7 +2,7 @@
 
 [English README](README.md)
 
-AIKernel.Demo は、AIKernel 0.1.2 package family の利用者向け sample workspace です。
+AIKernel.Demo は、AIKernel 0.1.3 package family の利用者向け sample workspace です。
 AIKernel.Core の抽象を、console、API host、browser、VFS、PDP、pipeline、
 replay-inspection demo として実際に見える形にします。
 
@@ -20,9 +20,9 @@ AIKernel.Demo は、application が Core、Kernel、Capability module、VFS、PD
 pipeline、Replay inspection をどのように合成するかを示します。Demo 専用 code を
 contract repository や runtime repository に入れません。
 
-この repository は、完了した 0.1.0 prototype validation phase から、公開済みの
-Core、Control、Providers、Wasm、Tools package contract を消費する 0.1.2 release line
-への移行を示します。
+この repository は、完了した 0.1.0 prototype validation phase から、canonical な
+Core、Control、Providers、Wasm、Tools、CUDA、GPU DTO contract を消費する
+0.1.3 release line への移行を示します。
 
 Demo は利用者側です。Runtime execution engine は AIKernel.Control に属します。
 外部 Provider / Capability module は AIKernel.Providers または専用 runtime repository に
@@ -37,8 +37,12 @@ Demo は利用者側です。Runtime execution engine は AIKernel.Control に�
   OpenAI-compatible API host demo。ProviderRouter、PDP Allow/Deny、ReplayLog HTTP
   response headers を扱います。
 - `AIKernel.Demo.Wasm` - Context、Execution、VFS 可視化、WebAssembly provider call、
-  WebGPU CPU fallback、DAG step animation、PromptRules signature verification の
-  browser Playground。
+  WebGPU CPU fallback、canonical GPU rev3 HUD / Aisthesis / spatial pass、
+  DAG step animation、PromptRules signature verification の browser Playground。
+- `AIKernel.Demo.Gpu` - canonical GPU rev3 の raw-framebuffer Aisthesis、
+  spatial reasoning、offscreen HUD composition pass vocabulary を直接確認する
+  console demo。WebGPU / Dawn / CUDA で共有する DTO path を見せつつ、
+  自動実行では CPU fallback で決定論的に動作します。
 - `AIKernel.Demo.Os` - `AIKernel.Providers.Standard` を消費し、CPU compute、
   process supervision、安全な scheduler example を示す standard OS provider demo。
 - `AIKernel.Demo.CoreRuntime` - routing、capability registry、clock、VFS、Hosting、
@@ -66,7 +70,8 @@ Demo は利用者側です。Runtime execution engine は AIKernel.Control に�
 - `AIKernel.Demo.ReplayInspector` - ReplayLog loading、provider selection replay、
   PromptRules version comparison、ExecutionState diff の deterministic replay inspector。
 - `AIKernel.Demo.Python` - 同じ contract semantics を Python で再現する教材デモ。
-  DSL parsing、モナド風 pipeline、VFS snapshot、semantic delta、deterministic replay を扱います。
+  DSL parsing、モナド風 pipeline、VFS snapshot、semantic delta、deterministic replay、
+  Wasm GPU rev3 teaching path を扱います。
 
 ## ドキュメント
 
@@ -77,7 +82,7 @@ Demo は利用者側です。Runtime execution engine は AIKernel.Control に�
 
 ## クイックスタート
 
-まず Release build を行い、次に 0.1.2 の public package surface が利用できることを
+まず Release build を行い、次に 0.1.3 の public package surface が利用できることを
 最小 demo で確認します。以下のコマンドは外部 network、secret、model download、
 native CUDA hardware を必要としません。
 
@@ -94,7 +99,7 @@ dotnet run --project src/AIKernel.Demo.StandardProviders/AIKernel.Demo.StandardP
 
 ## Demo Map の実行順
 
-AIKernel 0.1.2 package family を、個別 sample ではなく OS-shaped runtime として
+AIKernel 0.1.3 package family を、個別 sample ではなく OS-shaped runtime として
 理解したい場合は、以下の順番で実行してください。
 
 | Step | Demo | 利用者が理解できること |
@@ -105,8 +110,9 @@ AIKernel 0.1.2 package family を、個別 sample ではなく OS-shaped runtime
 | 4 | `AIKernel.Demo.Providers` | 公式 extension Provider が descriptor、ID、invoker を公開しつつ live external call を行わない境界。 |
 | 5 | `AIKernel.Demo.StandardProviders` | file system、logging、event bus、network metadata、profiler を OS driver として扱う方法。 |
 | 6 | `AIKernel.Demo.Tools` | canonical formatting、inspection、replay、ROM、export helper による再現可能な診断。 |
-| 7 | `AIKernel.Demo.Wasm` | browser / WASM runtime surface を process lifecycle と deterministic WebGPU fallback path で検証する方法。 |
-| 8 | `AIKernel.Demo.Cuda` | Windows-native CUDA package contract を見せつつ、非 Windows では deterministic skip する設計。 |
+| 7 | `AIKernel.Demo.Wasm` | browser / WASM runtime surface を process lifecycle、deterministic WebGPU fallback path、canonical GPU rev3 HUD / Aisthesis / spatial pass で検証する方法。 |
+| 8 | `AIKernel.Demo.Gpu` | browser GPU hardware を要求せず、canonical GPU rev3 pass vocabulary を console demo から直接確認する方法。 |
+| 9 | `AIKernel.Demo.Cuda` | Windows-native CUDA package contract を見せつつ、非 Windows では deterministic skip する設計。 |
 
 console demo をまとめて実行する場合:
 
@@ -114,7 +120,14 @@ console demo をまとめて実行する場合:
 dotnet run --project src/AIKernel.Demo.Control/AIKernel.Demo.Control.csproj -c Release
 dotnet run --project src/AIKernel.Demo.Providers/AIKernel.Demo.Providers.csproj -c Release
 dotnet run --project src/AIKernel.Demo.Tools/AIKernel.Demo.Tools.csproj -c Release
+dotnet run --project src/AIKernel.Demo.Gpu/AIKernel.Demo.Gpu.csproj -c Release
 dotnet run --project src/AIKernel.Demo.Cuda/AIKernel.Demo.Cuda.csproj -c Release
+```
+
+canonical GPU rev3 の実行可能ドキュメントを確認する場合:
+
+```powershell
+dotnet test tests/AIKernel.Demo.Tests/AIKernel.Demo.Tests.csproj -c Release --filter RunGpuRev3Pipeline
 ```
 
 validation test を実行する場合:
@@ -131,7 +144,7 @@ demo project から `PackageReference` で消費する対象ではありませ�
 として install し、OS command surface を直接実行します。
 
 ```powershell
-dotnet tool install -g AIKernel.Tools.CLI --version 0.1.2
+dotnet tool install -g AIKernel.Tools.CLI --version 0.1.3
 aik runtime ping
 aik system info
 aik system vfs --vfs-root .
@@ -145,16 +158,18 @@ Demo は Core の design decision を意図的に反映します。Pipeline は 
 提案者で PDP が最終決定者です。Replay は同じ execution を再実行するために必要な
 material を保存します。
 
-0.1.2 release には `AIKernel.Demo.Contracts` と `AIKernel.Demo.Pipelines` の
+0.1.3 release には `AIKernel.Demo.Contracts` と `AIKernel.Demo.Pipelines` の
 contract-alignment smoke path が含まれます。Execution hash-chain data は
 `AIKernel.Dtos.Execution.HashChain`、Routing data は
 `AIKernel.Dtos.Routing.KernelProviderRoutingDecision`、DSL semantic IR は
 `AIKernel.Dtos.Dsl` を通じて構築します。Demo code は AIKernel.NET contracts の
 consumer であり、Core internal DSL / History runtime type には依存しません。
 
-0.1.2 release では、`AIKernelPackageVersion` と Core、Control、Cuda、Providers、
-Wasm、Tools の package version property は公開済みの 0.1.2 package family を指します。
+0.1.3 release では、`AIKernelPackageVersion` と Core、Control、Cuda、Providers、
+Wasm、Tools の package version property は canonical な 0.1.3 package family を指します。
 Demo は個別に package 公開する対象ではなく、release validation workspace として扱います。
+GPU rev3 demo path は、raw-framebuffer Aisthesis、`topos,route,threat,zoe` の
+spatial matrix order、offscreen HUD composition を public DTO 経由で検証します。
 
 ## コントリビュータ向けガイドライン
 

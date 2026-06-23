@@ -2,7 +2,7 @@
 
 [日本語 README](README-ja.md)
 
-AIKernel.Demo is the user-facing sample workspace for the AIKernel 0.1.2 package
+AIKernel.Demo is the user-facing sample workspace for the AIKernel 0.1.3 package
 family. It makes AIKernel.Core abstractions visible through runnable console,
 API-host, browser, VFS, PDP, pipeline, and replay-inspection demos.
 
@@ -23,8 +23,8 @@ modules, VFS, PDP, pipelines, and Replay inspection without putting demo-only
 code into contract or runtime repositories.
 
 The repository marks the transition from the completed 0.1.0 prototype
-validation phase to the 0.1.2 release line, where Demo consumes the published
-Core, Control, Providers, Wasm, and Tools package contracts.
+validation phase to the 0.1.3 release line, where Demo consumes the canonical
+Core, Control, Providers, Wasm, Tools, CUDA, and GPU DTO contracts.
 
 Demo is a consumer. Runtime execution engines belong in AIKernel.Control.
 External Provider and Capability modules belong in AIKernel.Providers or their
@@ -46,8 +46,13 @@ Release notes:
   `/v1/chat/completions` through AIKernel, capability-based ProviderRouter
   selection, PDP Allow/Deny, and ReplayLog HTTP response headers.
 - `AIKernel.Demo.Wasm` - browser Playground for Context, Execution, VFS
-  visualization, WebAssembly provider calls, WebGPU CPU fallback, DAG step
-  animation, and PromptRules signature verification.
+  visualization, WebAssembly provider calls, WebGPU CPU fallback, canonical GPU
+  rev3 HUD/Aisthesis/spatial passes, DAG step animation, and PromptRules
+  signature verification.
+- `AIKernel.Demo.Gpu` - direct console demo for the canonical GPU rev3
+  raw-framebuffer Aisthesis, spatial reasoning, and offscreen HUD composition
+  pass vocabulary. It runs deterministically through CPU fallback while keeping
+  the shared WebGPU/Dawn/CUDA DTO path visible.
 - `AIKernel.Demo.Os` - standard OS provider demo that consumes
   `AIKernel.Providers.Standard` for CPU compute, process supervision, and safe
   scheduler examples.
@@ -80,8 +85,8 @@ Release notes:
   and ExecutionState diffs.
 - `AIKernel.Demo.Python` - Python teaching/demo port of the same contract
   semantics: DSL parsing, monad-style pipelines, VFS snapshots, semantic
-  deltas, deterministic replay, and one-to-one release surfaces for the eight
-  0.1.2 C# golden-path demos.
+  deltas, deterministic replay, and one-to-one release surfaces for the nine
+  0.1.3 C# golden-path demos, including the Wasm GPU rev3 teaching path.
 
 ## Documentation
 
@@ -100,7 +105,7 @@ Japanese:
 ## Quick Start
 
 Start with the release build, then run the smallest demos that prove the public
-0.1.2 package surfaces are available. These commands do not require external
+0.1.3 package surfaces are available. These commands do not require external
 network access, secrets, model downloads, or native CUDA hardware.
 
 First demo to run: `AIKernel.Demo.CoreRuntime`.
@@ -116,7 +121,7 @@ Common project properties are centralized in `Directory.Build.props`.
 
 ## Run the Demo Map
 
-Use this order when you want to understand the 0.1.2 package family as an
+Use this order when you want to understand the 0.1.3 package family as an
 OS-shaped runtime rather than as isolated samples.
 
 | Step | Demo | What the user should learn |
@@ -127,8 +132,9 @@ OS-shaped runtime rather than as isolated samples.
 | 4 | `AIKernel.Demo.Providers` | How official extension Providers expose descriptors, IDs, and invokers without performing live external calls. |
 | 5 | `AIKernel.Demo.StandardProviders` | How standard OS drivers cover file system, logging, event bus, network metadata, and profiler surfaces. |
 | 6 | `AIKernel.Demo.Tools` | How canonical formatting, inspection, replay, ROM, and export helpers support reproducible diagnostics. |
-| 7 | `AIKernel.Demo.Wasm` | How the browser/WASM runtime surface is tested through process lifecycle and deterministic WebGPU fallback paths. |
-| 8 | `AIKernel.Demo.Cuda` | How Windows-native CUDA package contracts are visible while non-Windows environments skip deterministically. |
+| 7 | `AIKernel.Demo.Wasm` | How the browser/WASM runtime surface is tested through process lifecycle, deterministic WebGPU fallback paths, and canonical GPU rev3 HUD/Aisthesis/spatial passes. |
+| 8 | `AIKernel.Demo.Gpu` | How the canonical GPU rev3 pass vocabulary is exercised directly from a console demo without requiring browser GPU hardware. |
+| 9 | `AIKernel.Demo.Cuda` | How Windows-native CUDA package contracts are visible while non-Windows environments skip deterministically. |
 
 Run the console demos in one pass:
 
@@ -136,7 +142,14 @@ Run the console demos in one pass:
 dotnet run --project src/AIKernel.Demo.Control/AIKernel.Demo.Control.csproj -c Release
 dotnet run --project src/AIKernel.Demo.Providers/AIKernel.Demo.Providers.csproj -c Release
 dotnet run --project src/AIKernel.Demo.Tools/AIKernel.Demo.Tools.csproj -c Release
+dotnet run --project src/AIKernel.Demo.Gpu/AIKernel.Demo.Gpu.csproj -c Release
 dotnet run --project src/AIKernel.Demo.Cuda/AIKernel.Demo.Cuda.csproj -c Release
+```
+
+Run the canonical GPU rev3 executable documentation:
+
+```powershell
+dotnet test tests/AIKernel.Demo.Tests/AIKernel.Demo.Tests.csproj -c Release --filter RunGpuRev3Pipeline
 ```
 
 Run the validation tests:
@@ -153,7 +166,7 @@ through `PackageReference` by the in-process demo projects. Install it as the
 `aik` command and run the OS command surface directly:
 
 ```powershell
-dotnet tool install -g AIKernel.Tools.CLI --version 0.1.2
+dotnet tool install -g AIKernel.Tools.CLI --version 0.1.3
 aik runtime ping
 aik system info
 aik system vfs --vfs-root .
@@ -167,17 +180,19 @@ deterministically by the TaskManager, Providers declare replaceable
 Capabilities, LLMs propose while PDP makes final decisions, and replay captures
 all material needed to rerun the same execution.
 
-The 0.1.2 release includes contract-alignment smoke paths in
+The 0.1.3 release includes contract-alignment smoke paths in
 `AIKernel.Demo.Contracts` and `AIKernel.Demo.Pipelines`: they construct execution
 hash-chain data through `AIKernel.Dtos.Execution.HashChain`, routing data through
 `AIKernel.Dtos.Routing.KernelProviderRoutingDecision`, and DSL semantic IR
 through `AIKernel.Dtos.Dsl`. Demo code remains a consumer of AIKernel.NET
 contracts and does not depend on Core internal DSL/History runtime types.
 
-For the 0.1.2 release, `AIKernelPackageVersion` and the Core, Control, Cuda,
-Providers, Wasm, and Tools package version properties point to the published
-0.1.2 package family. Demo remains a release validation workspace rather than a
-package that is published independently.
+For the 0.1.3 release, `AIKernelPackageVersion` and the Core, Control, Cuda,
+Providers, Wasm, and Tools package version properties point to the canonical
+0.1.3 package family. Demo remains a release validation workspace rather than a
+package that is published independently. The GPU rev3 demo path specifically
+validates raw-framebuffer Aisthesis, spatial matrix order
+`topos,route,threat,zoe`, and offscreen HUD composition through public DTOs.
 
 ## Contributor Guidelines
 

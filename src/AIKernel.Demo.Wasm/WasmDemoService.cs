@@ -1,5 +1,8 @@
 using AIKernel.Abstractions.Compute;
+using AIKernel.Abstractions.Gpu;
 using AIKernel.Common.Results;
+using AIKernel.Dtos.Gpu;
+using AIKernel.Enums;
 using AIKernel.Wasm.Comput;
 using AIKernel.Wasm.Runtime;
 using Microsoft.Extensions.DependencyInjection;
@@ -116,6 +119,143 @@ public sealed class WasmDemoService : Abstractions.IWasmDemoSurface
     }
 
     /// <summary>
+    /// [EN] Runs the canonical GPU rev3 pass sequence without requiring browser GPU hardware.
+    /// [JA] browser GPU hardware を要求せず canonical GPU rev3 pass sequence を実行します。
+    /// </summary>
+    /// <remarks>
+    /// [EN] The demo keeps the DTO path visible: raw framebuffer to Aisthesis, Aisthesis to spatial reasoning, and smoothed runtime state to GPU HUD composition. WebGPU, Dawn, and CUDA providers are expected to share these same pass ids and metadata keys.
+    /// [JA] この demo は DTO path を見える形に保ちます。raw framebuffer から Aisthesis、Aisthesis から spatial reasoning、smoothing 済み runtime state から GPU HUD composition へ流します。WebGPU、Dawn、CUDA Provider は同じ pass id と metadata key を共有する想定です。
+    /// </remarks>
+    /// <returns>EN:  JA: 結果を返します。
+    /// [EN] A deterministic rev3 pipeline snapshot.
+    /// [JA] 決定論的な rev3 pipeline snapshot です。
+    /// </returns>
+    public async Task<GpuRev3PipelineDemoResult> RunGpuRev3PipelineAsync()
+    {
+        var settings = new WebGpuComputeSettings
+        {
+            ForceCpuFallback = true,
+            BackendName = "demo-rev3-cpu-fallback"
+        };
+        var provider = new WebGpuComputeProvider(settings);
+        await using var context = await provider.CreateContextAsync(new GpuProviderOptions
+        {
+            PreferredBackend = GpuBackend.WebGpu,
+            ForceCpuFallback = true,
+            PreferZeroCopyRawTexture = true,
+            Metadata = settings.ToMetadata()
+        }).ConfigureAwait(false);
+
+        var raw = new GpuFrameTarget
+        {
+            TargetId = "demo.raw-framebuffer",
+            Kind = GpuFrameTargetKind.RawFramebuffer,
+            Backend = context.Backend,
+            Width = 320,
+            Height = 200,
+            PixelFormat = FramePixelFormat.Indexed8,
+            ZeroCopy = false
+        };
+        var frame = context.CreateFrameToken(raw);
+
+        var aisthesis = await provider.ProcessAsync(new GpuAisthesisInput
+        {
+            Frame = frame,
+            RawFramebuffer = raw,
+            Features = new SortedDictionary<string, bool>(StringComparer.Ordinal)
+            {
+                ["edge"] = true,
+                ["enemyDirection"] = true,
+                ["redPanel"] = true,
+                ["vision9x9"] = true
+            }
+        }).ConfigureAwait(false);
+
+        var spatial = await provider.ReasonAsync(new GpuSpatialReasoningInput
+        {
+            Frame = frame,
+            AisMatrices = CreateDemoAisMatrices(),
+            StateVector = [0.75f, 0.5f, 0.25f, 1.0f]
+        }).ConfigureAwait(false);
+
+        var hud = await provider.ComposeAsync(new GpuHudInput
+        {
+            Frame = frame,
+            Features = new SortedDictionary<string, bool>(StringComparer.Ordinal)
+            {
+                ["ctgPanels"] = true,
+                ["egoRadar"] = true,
+                ["fusionLink"] = true,
+                ["gpuTextAnchors"] = true
+            },
+            HudPanelRects = CreateDemoHudPanelRects(),
+            HudPanelStateVectors = CreateDemoHudPanelStateVectors(),
+            EgoRadar = new GpuHudEgoRadarInput
+            {
+                CompassHeadingDegrees = 315.0f,
+                CompassConfidence = 0.82f,
+                CompassUsable = true,
+                Kinesis = new GpuVector2(0.25f, 0.75f),
+                VisualEnemyYawDegrees = 12.0f,
+                VisualEnemyConfidence = 0.6f,
+                AudioEnemyYawDegrees = 18.0f,
+                AudioEnemyConfidence = 0.55f,
+                FusedEnemyYawDegrees = 15.0f,
+                FusedEnemyConfidence = 0.7f,
+                SdfLink = true,
+                RadarMode = GpuEgoRadarMode.Normal,
+                Summary = "normal/fusion"
+            },
+            Labels =
+            [
+                new GpuHudLabel
+                {
+                    Id = "priority",
+                    Text = "PRIORITY LOGOS",
+                    X = 0.08f,
+                    Y = 0.14f,
+                    Layer = 1,
+                    Tone = "logos",
+                    Source = "krisis",
+                    Key = "priority"
+                },
+                new GpuHudLabel
+                {
+                    Id = "telos",
+                    Text = "TELOS FIRSTDOOR",
+                    X = 0.5f,
+                    Y = 0.42f,
+                    Layer = 2,
+                    Tone = "ethos",
+                    Source = "objective",
+                    Key = "telos"
+                }
+            ]
+        }).ConfigureAwait(false);
+
+        var diagnostics = await provider.CaptureFrameDiagnosticsAsync(frame).ConfigureAwait(false);
+
+        return new GpuRev3PipelineDemoResult(
+            ProviderId: provider.ProviderId,
+            Backend: context.Backend.ToString(),
+            UsingCpuFallback: context.UsingCpuFallback,
+            PassIds:
+            [
+                GpuOperationNames.GpuAisthesisRawFrame,
+                GpuOperationNames.GpuSpatialReasoning,
+                GpuOperationNames.GpuHudComposite
+            ],
+            RawAisthesisOnly: aisthesis.Frame.RawTarget.Kind == GpuFrameTargetKind.RawFramebuffer &&
+                aisthesis.MaskTexture?.Kind == GpuFrameTargetKind.FeatureMask,
+            HudCompositeOffscreen: hud.Kind == GpuFrameTargetKind.HudCompositeOffscreen,
+            SensorReadbackRequired: diagnostics.SensorPath.Readback == GpuReadbackPolicy.RequiredFallback,
+            HudReadbackRequired: diagnostics.HudPath.Readback == GpuReadbackPolicy.RequiredFallback,
+            FeatureVector: aisthesis.FeatureVector,
+            SpatialVector: spatial.SpatialVector,
+            Metadata: settings.ToMetadata());
+    }
+
+    /// <summary>
     /// [EN] Converts float values into little-endian bytes for compute buffers.
     /// [JA] compute buffer 用に float 値を little-endian byte へ変換します。
     /// </summary>
@@ -137,6 +277,41 @@ public sealed class WasmDemoService : Abstractions.IWasmDemoSurface
 
         return bytes;
     }
+
+    private static IReadOnlyList<IReadOnlyList<float>> CreateDemoAisMatrices()
+    {
+        var matrices = new List<IReadOnlyList<float>>(GpuCanonicalLayouts.AisMatrix.MaxItems);
+        for (var matrixIndex = 0; matrixIndex < GpuCanonicalLayouts.AisMatrix.MaxItems; matrixIndex++)
+        {
+            var values = new float[GpuCanonicalLayouts.AisMatrix.Stride];
+            for (var index = 0; index < values.Length; index++)
+            {
+                values[index] = (matrixIndex + 1) / 10.0f;
+            }
+
+            values[matrixIndex] = 0.9f;
+            matrices.Add(values);
+        }
+
+        return matrices;
+    }
+
+    private static IReadOnlyList<float> CreateDemoHudPanelRects()
+        =>
+        [
+            0.05f, 0.05f, 0.22f, 0.18f,
+            0.0f, 0.8f, 1.0f, 0.38f,
+            1.0f, 0.0f, 2.0f, 1.0f
+        ];
+
+    private static IReadOnlyList<float> CreateDemoHudPanelStateVectors()
+        =>
+        [
+            1.0f, 0.75f, 0.82f, 0.25f,
+            0.25f, 0.75f, 0.60f, 0.55f,
+            0.70f, 0.0f, 0.0f, 0.0f,
+            0.0f, 0.0f, 0.0f, 0.0f
+        ];
 
     /// <summary>
     /// [EN] Reads the WASM process name through an Option-based cast.

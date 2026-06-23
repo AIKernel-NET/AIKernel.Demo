@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AIKernel.Demo.Wasm\AIKernel.Demo.Wasm.csproj" />
+  </ItemGroup>
+</Project>

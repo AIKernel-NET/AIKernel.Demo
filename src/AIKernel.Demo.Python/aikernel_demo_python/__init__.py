@@ -7,8 +7,9 @@ Purpose:
 
 Runtime Specifications and Prerequisites:
     This module is intentionally lightweight and deterministic. It is used as a
-    learning artifact for the AIKernel 0.1.2 release line, where semantic
-    structure, policy decisions, routing, execution, and replay are kept visible.
+    learning artifact for the AIKernel 0.1.3 release line, where semantic
+    structure, policy decisions, routing, execution, replay, and GPU rev3
+    pass vocabulary are kept visible.
 
 Architectural Intent:
     The Python demo mirrors the C# demo surface without copying internal runtime
@@ -21,8 +22,9 @@ Architectural Intent:
 
 実行仕様と前提条件:
     この module は軽量かつ決定論的であることを意図しています。AIKernel
-    0.1.2 release line の学習教材として、semantic structure、policy
-    decision、routing、execution、replay の境界が見えるようにしています。
+    0.1.3 release line の学習教材として、semantic structure、policy
+    decision、routing、execution、replay、GPU rev3 pass vocabulary の境界が
+    見えるようにしています。
 
 アーキテクチャ意図:
     Python Demo は C# Demo の公開サーフェスに対応しますが、内部 runtime
@@ -30,7 +32,7 @@ Architectural Intent:
     小さな contract-facing step として読める必要があります。
 """
 
-from .release_surfaces import DemoSurfaceResult, run_all_release_surfaces
+from .release_surfaces import DemoSurfaceResult, run_all_release_surfaces, run_gpu_rev3_demo
 from .result import Result
 
-__all__ = ["DemoSurfaceResult", "Result", "run_all_release_surfaces"]
+__all__ = ["DemoSurfaceResult", "Result", "run_all_release_surfaces", "run_gpu_rev3_demo"]

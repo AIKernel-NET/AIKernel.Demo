@@ -48,6 +48,17 @@ public static class WasmDemoSurface
     /// </returns>
     public static async Task<WebGpuFallbackDemoResult> RunWebGpuFallbackVectorAddAsync()
         => await new WasmDemoService().RunWebGpuFallbackVectorAddAsync().ConfigureAwait(false);
+
+    /// <summary>
+    /// [EN] Runs the canonical GPU rev3 teaching path for HUD, Aisthesis, and spatial reasoning.
+    /// [JA] HUD、Aisthesis、spatial reasoning 用の canonical GPU rev3 teaching path を実行します。
+    /// </summary>
+    /// <returns>EN:  JA: 結果を返します。
+    /// [EN] A deterministic snapshot of the shared GPU rev3 pass vocabulary.
+    /// [JA] shared GPU rev3 pass vocabulary の決定論的 snapshot です。
+    /// </returns>
+    public static async Task<GpuRev3PipelineDemoResult> RunGpuRev3PipelineAsync()
+        => await new WasmDemoService().RunGpuRev3PipelineAsync().ConfigureAwait(false);
 }
 
 /// <summary>
@@ -96,3 +107,64 @@ public sealed record WebGpuFallbackDemoResult(
     string ProviderId,
     bool UsingCpuFallback,
     IReadOnlyList<float> VectorAdd);
+
+/// <summary>
+/// [EN] Result snapshot for the canonical GPU rev3 pipeline demo.
+/// [JA] canonical GPU rev3 pipeline Demo の result snapshot です。
+/// </summary>
+/// <param name="ProviderId">EN:  JA: ProviderId パラメーターです。
+/// [EN] Provider id used by the demo.
+/// [JA] Demo が使用した Provider id です。
+/// </param>
+/// <param name="Backend">EN:  JA: Backend パラメーターです。
+/// [EN] Active backend label.
+/// [JA] active backend label です。
+/// </param>
+/// <param name="UsingCpuFallback">EN:  JA: UsingCpuFallback パラメーターです。
+/// [EN] Whether deterministic CPU fallback was used.
+/// [JA] deterministic CPU fallback が使用されたかどうかです。
+/// </param>
+/// <param name="PassIds">EN:  JA: PassIds パラメーターです。
+/// [EN] Canonical rev3 pass ids exercised by the demo.
+/// [JA] Demo が実行した canonical rev3 pass id です。
+/// </param>
+/// <param name="RawAisthesisOnly">EN:  JA: RawAisthesisOnly パラメーターです。
+/// [EN] True when Aisthesis was bound to the raw framebuffer only.
+/// [JA] Aisthesis が raw framebuffer のみに bind された場合 true です。
+/// </param>
+/// <param name="HudCompositeOffscreen">EN:  JA: HudCompositeOffscreen パラメーターです。
+/// [EN] True when HUD composition returned an offscreen target.
+/// [JA] HUD composition が offscreen target を返した場合 true です。
+/// </param>
+/// <param name="SensorReadbackRequired">EN:  JA: SensorReadbackRequired パラメーターです。
+/// [EN] True when sensor diagnostics identify fallback readback.
+/// [JA] sensor diagnostics が fallback readback を示す場合 true です。
+/// </param>
+/// <param name="HudReadbackRequired">EN:  JA: HudReadbackRequired パラメーターです。
+/// [EN] True when HUD diagnostics identify fallback readback.
+/// [JA] HUD diagnostics が fallback readback を示す場合 true です。
+/// </param>
+/// <param name="FeatureVector">EN:  JA: FeatureVector パラメーターです。
+/// [EN] Canonical Aisthesis feature vector.
+/// [JA] canonical Aisthesis feature vector です。
+/// </param>
+/// <param name="SpatialVector">EN:  JA: SpatialVector パラメーターです。
+/// [EN] Canonical spatial reasoning vector.
+/// [JA] canonical spatial reasoning vector です。
+/// </param>
+/// <param name="Metadata">EN:  JA: Metadata パラメーターです。
+/// [EN] Provider rev3 metadata used by the demo.
+/// [JA] Demo が使用した Provider rev3 metadata です。
+/// </param>
+public sealed record GpuRev3PipelineDemoResult(
+    string ProviderId,
+    string Backend,
+    bool UsingCpuFallback,
+    IReadOnlyList<string> PassIds,
+    bool RawAisthesisOnly,
+    bool HudCompositeOffscreen,
+    bool SensorReadbackRequired,
+    bool HudReadbackRequired,
+    IReadOnlyList<float> FeatureVector,
+    IReadOnlyList<float> SpatialVector,
+    IReadOnlyDictionary<string, string> Metadata);
