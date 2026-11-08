@@ -4,13 +4,13 @@ AIKernel Demo Python Release Surface Parity Tests
 [EN]
 Purpose:
     Ensures the Python demo package has a visible counterpart for each
-    AIKernel.Demo 0.1.3 C# golden-path demo, including the direct GPU rev3
+    AIKernel.Demo 0.1.3 C# golden-path demo, including the direct canonical GPU
     console teaching path.
 
 [JA]
 目的:
     AIKernel.Demo 0.1.3 の C# golden-path demo それぞれに対して、直接 GPU
-    rev3 console 教材面を含め Python demo package 側にも見える対応面があることを
+    canonical GPU console 教材面を含め Python demo package 側にも見える対応面があることを
     確認します。
 """
 
@@ -53,16 +53,16 @@ def test_cuda_surface_keeps_non_windows_skip_and_windows_dry_run_paths() -> None
     assert "request.valid=true" in windows.lines
 
 
-def test_wasm_surface_exposes_gpu_rev3_pass_vocabulary() -> None:
+def test_wasm_surface_exposes_canonical_gpu_pass_vocabulary() -> None:
     wasm = next(surface for surface in run_all_release_surfaces() if surface.name == "Wasm")
-    assert "gpu.rev3=true" in wasm.lines
+    assert "gpu.canonical=true" in wasm.lines
     assert "gpu.passes=gpu.aisthesis.raw-frame,gpu.spatial-reasoning,gpu.hud.composite" in wasm.lines
     assert "gpu.raw=raw-framebuffer" in wasm.lines
     assert "gpu.hud=offscreen-composite" in wasm.lines
     assert "gpu.matrix=topos,route,threat,zoe" in wasm.lines
 
 
-def test_gpu_surface_is_direct_rev3_console_demo() -> None:
+def test_gpu_surface_is_direct_canonical_console_demo() -> None:
     gpu = next(surface for surface in run_all_release_surfaces() if surface.name == "Gpu")
     assert gpu.csharp_project == "AIKernel.Demo.Gpu"
     assert "passes=gpu.aisthesis.raw-frame,gpu.spatial-reasoning,gpu.hud.composite" in gpu.lines

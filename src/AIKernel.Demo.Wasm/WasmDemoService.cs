@@ -119,23 +119,23 @@ public sealed class WasmDemoService : Abstractions.IWasmDemoSurface
     }
 
     /// <summary>
-    /// [EN] Runs the canonical GPU rev3 pass sequence without requiring browser GPU hardware.
-    /// [JA] browser GPU hardware を要求せず canonical GPU rev3 pass sequence を実行します。
+    /// [EN] Runs the canonical GPU pass sequence without requiring browser GPU hardware.
+    /// [JA] browser GPU hardware を要求せず canonical GPU pass sequence を実行します。
     /// </summary>
     /// <remarks>
     /// [EN] The demo keeps the DTO path visible: raw framebuffer to Aisthesis, Aisthesis to spatial reasoning, and smoothed runtime state to GPU HUD composition. WebGPU, Dawn, and CUDA providers are expected to share these same pass ids and metadata keys.
     /// [JA] この demo は DTO path を見える形に保ちます。raw framebuffer から Aisthesis、Aisthesis から spatial reasoning、smoothing 済み runtime state から GPU HUD composition へ流します。WebGPU、Dawn、CUDA Provider は同じ pass id と metadata key を共有する想定です。
     /// </remarks>
     /// <returns>EN:  JA: 結果を返します。
-    /// [EN] A deterministic rev3 pipeline snapshot.
-    /// [JA] 決定論的な rev3 pipeline snapshot です。
+    /// [EN] A deterministic canonical pipeline snapshot.
+    /// [JA] 決定論的な canonical pipeline snapshot です。
     /// </returns>
-    public async Task<GpuRev3PipelineDemoResult> RunGpuRev3PipelineAsync()
+    public async Task<GpuCanonicalPipelineDemoResult> RunGpuCanonicalPipelineAsync()
     {
         var settings = new WebGpuComputeSettings
         {
             ForceCpuFallback = true,
-            BackendName = "demo-rev3-cpu-fallback"
+            BackendName = "demo-canonical-cpu-fallback"
         };
         var provider = new WebGpuComputeProvider(settings);
         await using var context = await provider.CreateContextAsync(new GpuProviderOptions
@@ -235,7 +235,7 @@ public sealed class WasmDemoService : Abstractions.IWasmDemoSurface
 
         var diagnostics = await provider.CaptureFrameDiagnosticsAsync(frame).ConfigureAwait(false);
 
-        return new GpuRev3PipelineDemoResult(
+        return new GpuCanonicalPipelineDemoResult(
             ProviderId: provider.ProviderId,
             Backend: context.Backend.ToString(),
             UsingCpuFallback: context.UsingCpuFallback,

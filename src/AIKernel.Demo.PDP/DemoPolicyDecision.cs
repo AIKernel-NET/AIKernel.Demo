@@ -10,7 +10,16 @@ namespace AIKernel.Demo.PDP;
 /// </remarks>
 public enum DemoPolicyCode
 {
+    /// <summary>
+    /// [EN] Indicates that the demo policy decision permits the requested action.
+    /// [JA] Demo ポリシー判定が要求された action を許可することを示します。
+    /// </summary>
     Allow,
+
+    /// <summary>
+    /// [EN] Indicates that the demo policy decision blocks the requested action.
+    /// [JA] Demo ポリシー判定が要求された action を拒否することを示します。
+    /// </summary>
     Deny
 }
 

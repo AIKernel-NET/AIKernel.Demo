@@ -12,7 +12,7 @@ of the AIKernel 0.1.3 ideas:
   slots.
 - Fail-closed parsing, policy, routing, replay formatting, and pipeline
   composition.
-- Canonical GPU rev3 pass vocabulary for Wasm HUD, Aisthesis, and spatial
+- Canonical GPU pass vocabulary for Wasm HUD, Aisthesis, and spatial
   reasoning demos, without requiring browser WebGPU hardware.
 
 ## Run
@@ -30,7 +30,7 @@ so no package install is required for local validation.
 
 | Module | Role |
 | --- | --- |
-| `release_surfaces` | One-to-one Python counterparts for the nine 0.1.3 C# golden-path demos, including the direct GPU rev3 console teaching path. |
+| `release_surfaces` | One-to-one Python counterparts for the nine 0.1.3 C# golden-path demos, including the direct GPU canonical console teaching path. |
 | `execution` | Deterministic graph and node DTOs plus the tiny execution engine. |
 | `kernel` | Task scheduling, provider routing, LLM output mock, and kernel run DTO. |
 | `pipelines` | Default pipeline catalog and Python monad-style composition demo. |
@@ -60,7 +60,7 @@ loading, model downloads, or browser WebGPU requirements.
 | `AIKernel.Demo.StandardProviders` | `run_standard_providers_demo()` |
 | `AIKernel.Demo.Tools` | `run_tools_demo()` |
 | `AIKernel.Demo.Wasm` | `run_wasm_demo()` with `gpu.aisthesis.raw-frame`, `gpu.spatial-reasoning`, and `gpu.hud.composite` pass vocabulary |
-| `AIKernel.Demo.Gpu` | `run_gpu_rev3_demo()` |
+| `AIKernel.Demo.Gpu` | `run_gpu_canonical_demo()` |
 | `AIKernel.Demo.Cuda` | `run_cuda_demo()` |
 
 ## Notes

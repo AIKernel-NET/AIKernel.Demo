@@ -2,8 +2,8 @@ using AIKernel.Demo.Wasm;
 using AIKernel.Dtos.Gpu;
 
 /// <summary>
-/// [EN] Console entry point for the canonical GPU rev3 teaching demo.
-/// [JA] canonical GPU rev3 教材デモの console entry point です。
+/// [EN] Console entry point for the canonical GPU teaching demo.
+/// [JA] canonical GPU 教材デモの console entry point です。
 /// </summary>
 /// <remarks>
 /// [EN] The runner calls the Wasm demo surface because browser WebGPU, Dawn, and CUDA providers share the same pass vocabulary. Automated runs use deterministic CPU fallback while keeping the canonical DTO path visible.
@@ -12,12 +12,12 @@ using AIKernel.Dtos.Gpu;
 public static class Program
 {
     /// <summary>
-    /// [EN] Runs the GPU rev3 demo and writes a deterministic summary.
-    /// [JA] GPU rev3 demo を実行し、決定論的 summary を出力します。
+    /// [EN] Runs the GPU canonical demo and writes a deterministic summary.
+    /// [JA] GPU canonical demo を実行し、決定論的 summary を出力します。
     /// </summary>
     public static async Task Main()
     {
-        var result = await WasmDemoSurface.RunGpuRev3PipelineAsync().ConfigureAwait(false);
+        var result = await WasmDemoSurface.RunGpuCanonicalPipelineAsync().ConfigureAwait(false);
 
         Console.WriteLine("AIKernel.Demo.Gpu");
         Console.WriteLine($"provider={result.ProviderId}");

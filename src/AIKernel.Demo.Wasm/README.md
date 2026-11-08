@@ -3,7 +3,7 @@
 Shows the AIKernel WASM runtime surface through executable tests. The demo
 covers process lifecycle, memory, file system, event, audio, screenshot,
 save-state, time, WebGPU descriptor/backend surface, deterministic CPU
-fallback for vector addition, and the canonical GPU rev3 HUD/Aisthesis/spatial
+fallback for vector addition, and the canonical GPU HUD/Aisthesis/spatial
 pipeline.
 
 Run:
@@ -17,10 +17,10 @@ Expected test surface:
 ```text
 WasmDemoSurfaceTests.ProcessLifecycle...
 WasmDemoSurfaceTests.WebGpuFallback...
-WasmDemoSurfaceTests.RunGpuRev3Pipeline...
+WasmDemoSurfaceTests.RunGpuCanonicalPipeline...
 ```
 
-The WebGPU paths use deterministic CPU fallback for automated tests. The rev3
+The WebGPU paths use deterministic CPU fallback for automated tests. The canonical
 pipeline still exercises the canonical pass vocabulary:
 
 - `gpu.aisthesis.raw-frame`

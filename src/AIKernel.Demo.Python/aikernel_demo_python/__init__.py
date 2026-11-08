@@ -8,7 +8,7 @@ Purpose:
 Runtime Specifications and Prerequisites:
     This module is intentionally lightweight and deterministic. It is used as a
     learning artifact for the AIKernel 0.1.3 release line, where semantic
-    structure, policy decisions, routing, execution, replay, and GPU rev3
+    structure, policy decisions, routing, execution, replay, and canonical GPU
     pass vocabulary are kept visible.
 
 Architectural Intent:
@@ -23,7 +23,7 @@ Architectural Intent:
 実行仕様と前提条件:
     この module は軽量かつ決定論的であることを意図しています。AIKernel
     0.1.3 release line の学習教材として、semantic structure、policy
-    decision、routing、execution、replay、GPU rev3 pass vocabulary の境界が
+    decision、routing、execution、replay、canonical GPU pass vocabulary の境界が
     見えるようにしています。
 
 アーキテクチャ意図:
@@ -32,7 +32,7 @@ Architectural Intent:
     小さな contract-facing step として読める必要があります。
 """
 
-from .release_surfaces import DemoSurfaceResult, run_all_release_surfaces, run_gpu_rev3_demo
+from .release_surfaces import DemoSurfaceResult, run_all_release_surfaces, run_gpu_demo
 from .result import Result
 
-__all__ = ["DemoSurfaceResult", "Result", "run_all_release_surfaces", "run_gpu_rev3_demo"]
+__all__ = ["DemoSurfaceResult", "Result", "run_all_release_surfaces", "run_gpu_demo"]

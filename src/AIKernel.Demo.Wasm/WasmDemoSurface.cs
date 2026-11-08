@@ -50,15 +50,15 @@ public static class WasmDemoSurface
         => await new WasmDemoService().RunWebGpuFallbackVectorAddAsync().ConfigureAwait(false);
 
     /// <summary>
-    /// [EN] Runs the canonical GPU rev3 teaching path for HUD, Aisthesis, and spatial reasoning.
-    /// [JA] HUD、Aisthesis、spatial reasoning 用の canonical GPU rev3 teaching path を実行します。
+    /// [EN] Runs the canonical GPU teaching path for HUD, Aisthesis, and spatial reasoning.
+    /// [JA] HUD、Aisthesis、spatial reasoning 用の canonical GPU teaching path を実行します。
     /// </summary>
     /// <returns>EN:  JA: 結果を返します。
-    /// [EN] A deterministic snapshot of the shared GPU rev3 pass vocabulary.
-    /// [JA] shared GPU rev3 pass vocabulary の決定論的 snapshot です。
+    /// [EN] A deterministic snapshot of the shared GPU canonical pass vocabulary.
+    /// [JA] shared GPU canonical pass vocabulary の決定論的 snapshot です。
     /// </returns>
-    public static async Task<GpuRev3PipelineDemoResult> RunGpuRev3PipelineAsync()
-        => await new WasmDemoService().RunGpuRev3PipelineAsync().ConfigureAwait(false);
+    public static async Task<GpuCanonicalPipelineDemoResult> RunGpuCanonicalPipelineAsync()
+        => await new WasmDemoService().RunGpuCanonicalPipelineAsync().ConfigureAwait(false);
 }
 
 /// <summary>
@@ -109,8 +109,8 @@ public sealed record WebGpuFallbackDemoResult(
     IReadOnlyList<float> VectorAdd);
 
 /// <summary>
-/// [EN] Result snapshot for the canonical GPU rev3 pipeline demo.
-/// [JA] canonical GPU rev3 pipeline Demo の result snapshot です。
+/// [EN] Result snapshot for the canonical GPU pipeline demo.
+/// [JA] canonical GPU pipeline Demo の result snapshot です。
 /// </summary>
 /// <param name="ProviderId">EN:  JA: ProviderId パラメーターです。
 /// [EN] Provider id used by the demo.
@@ -125,8 +125,8 @@ public sealed record WebGpuFallbackDemoResult(
 /// [JA] deterministic CPU fallback が使用されたかどうかです。
 /// </param>
 /// <param name="PassIds">EN:  JA: PassIds パラメーターです。
-/// [EN] Canonical rev3 pass ids exercised by the demo.
-/// [JA] Demo が実行した canonical rev3 pass id です。
+/// [EN] Canonical pass ids exercised by the demo.
+/// [JA] Demo が実行した canonical pass id です。
 /// </param>
 /// <param name="RawAisthesisOnly">EN:  JA: RawAisthesisOnly パラメーターです。
 /// [EN] True when Aisthesis was bound to the raw framebuffer only.
@@ -153,10 +153,10 @@ public sealed record WebGpuFallbackDemoResult(
 /// [JA] canonical spatial reasoning vector です。
 /// </param>
 /// <param name="Metadata">EN:  JA: Metadata パラメーターです。
-/// [EN] Provider rev3 metadata used by the demo.
-/// [JA] Demo が使用した Provider rev3 metadata です。
+/// [EN] Provider canonical metadata used by the demo.
+/// [JA] Demo が使用した Provider canonical metadata です。
 /// </param>
-public sealed record GpuRev3PipelineDemoResult(
+public sealed record GpuCanonicalPipelineDemoResult(
     string ProviderId,
     string Backend,
     bool UsingCpuFallback,

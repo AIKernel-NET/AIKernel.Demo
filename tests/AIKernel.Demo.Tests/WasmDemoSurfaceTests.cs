@@ -57,8 +57,8 @@ public sealed class WasmDemoSurfaceTests
     }
 
     /// <summary>
-    /// [EN] Confirms that the demo exposes the canonical rev3 GPU HUD/Aisthesis path as executable documentation.
-    /// [JA] Demo が canonical rev3 GPU HUD/Aisthesis path を実行可能な文書として公開することを確認します。
+    /// [EN] Confirms that the demo exposes the canonical GPU HUD/Aisthesis path as executable documentation.
+    /// [JA] Demo が canonical GPU HUD/Aisthesis path を実行可能な文書として公開することを確認します。
     /// </summary>
     [Fact]
     /// <summary>
@@ -69,9 +69,9 @@ public sealed class WasmDemoSurfaceTests
     /// [EN] A task that completes after the deterministic test assertion finishes.
     /// [JA] 決定論的なテスト検証が完了したときに完了するタスクです。
     /// </returns>
-    public async Task RunGpuRev3PipelineAsyncCoversCanonicalHudAisthesisAndSpatialPasses()
+    public async Task RunGpuCanonicalPipelineAsyncCoversCanonicalHudAisthesisAndSpatialPasses()
     {
-        var result = await WasmDemoSurface.RunGpuRev3PipelineAsync();
+        var result = await WasmDemoSurface.RunGpuCanonicalPipelineAsync();
 
         Assert.Equal("webgpu.compute", result.ProviderId);
         Assert.Equal(GpuBackend.CpuFallback.ToString(), result.Backend);
@@ -87,7 +87,7 @@ public sealed class WasmDemoSurfaceTests
         Assert.Equal(320.0f, result.FeatureVector[0]);
         Assert.Equal(200.0f, result.FeatureVector[1]);
         Assert.Equal(GpuCanonicalLayouts.SpatialVector.Stride, result.SpatialVector.Count);
-        Assert.Equal("true", result.Metadata[GpuProviderMetadataKeys.Rev3]);
+        Assert.Equal("true", result.Metadata[GpuProviderMetadataKeys.Canonical]);
         Assert.Equal("topos,route,threat,zoe", result.Metadata[GpuProviderMetadataKeys.AisMatrixOrder]);
         Assert.Equal("raw-framebuffer", result.Metadata[GpuProviderMetadataKeys.RawCaptureSource]);
         Assert.Equal("optional-native-or-js", result.Metadata[GpuProviderMetadataKeys.PassBridge]);

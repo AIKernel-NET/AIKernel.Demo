@@ -1,9 +1,9 @@
 # AIKernel.Demo.Gpu
 
-Direct console entry point for the canonical AIKernel 0.1.3 GPU rev3 teaching
+Direct console entry point for the AIKernel 0.1.3 canonical GPU teaching
 path.
 
-This project calls `AIKernel.Demo.Wasm.WasmDemoSurface.RunGpuRev3PipelineAsync`
+This project calls `AIKernel.Demo.Wasm.WasmDemoSurface.RunGpuCanonicalPipelineAsync`
 and prints the shared GPU pass vocabulary used by browser WebGPU, native Dawn,
 and CUDA-facing providers:
 

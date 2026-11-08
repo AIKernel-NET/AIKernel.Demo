@@ -15,7 +15,7 @@ Architectural Intent:
     The C# demo projects are executable package-coverage samples. This module
     mirrors their public teaching intent in Python so readers can compare the
     same CoreRuntime, Contracts, Control, Providers, StandardProviders, Tools,
-    Wasm, Cuda, and canonical GPU rev3 concepts across both languages.
+    Wasm, Cuda, and canonical GPU concepts across both languages.
 
 [JA]
 目的:
@@ -28,7 +28,7 @@ Architectural Intent:
 アーキテクチャ意図:
     C# demo project は package coverage を示す実行可能 sample です。この module は
     CoreRuntime、Contracts、Control、Providers、StandardProviders、Tools、Wasm、
-    Cuda、canonical GPU rev3 の同じ概念を Python 側でも比較できるようにします。
+    Cuda、canonical GPU の同じ概念を Python 側でも比較できるようにします。
 """
 
 from __future__ import annotations
@@ -228,10 +228,10 @@ def run_tools_demo() -> DemoSurfaceResult:
 def run_wasm_demo() -> DemoSurfaceResult:
     """[EN]
     Mirrors AIKernel.Demo.Wasm with deterministic process, WebGPU fallback,
-    and canonical GPU rev3 pass vocabulary.
+    and canonical GPU pass vocabulary.
 
     [JA]
-    deterministic process、WebGPU fallback、canonical GPU rev3 pass vocabulary
+    deterministic process、WebGPU fallback、canonical GPU pass vocabulary
     を使って AIKernel.Demo.Wasm に対応します。
     """
 
@@ -245,7 +245,7 @@ def run_wasm_demo() -> DemoSurfaceResult:
             "memory.surface=linear",
             "fs.surface=wasi-bridge",
             "webgpu.fallback=cpu",
-            "gpu.rev3=true",
+            "gpu.canonical=true",
             "gpu.passes=gpu.aisthesis.raw-frame,gpu.spatial-reasoning,gpu.hud.composite",
             "gpu.raw=raw-framebuffer",
             "gpu.hud=offscreen-composite",
@@ -254,20 +254,20 @@ def run_wasm_demo() -> DemoSurfaceResult:
     )
 
 
-def run_gpu_rev3_demo() -> DemoSurfaceResult:
+def run_gpu_demo() -> DemoSurfaceResult:
     """[EN]
     Mirrors AIKernel.Demo.Gpu, the direct console entry point for canonical GPU
-    rev3 pass vocabulary.
+    pass vocabulary.
 
     [JA]
-    canonical GPU rev3 pass vocabulary の直接 console entry point である
+    canonical GPU pass vocabulary の直接 console entry point である
     AIKernel.Demo.Gpu に対応します。
     """
 
     return DemoSurfaceResult(
         "Gpu",
         "AIKernel.Demo.Gpu",
-        "aikernel_demo_python.release_surfaces.run_gpu_rev3_demo",
+        "aikernel_demo_python.release_surfaces.run_gpu_demo",
         (
             "AIKernel.Demo.Gpu",
             "backend=CpuFallback; cpuFallback=True",
@@ -322,6 +322,6 @@ def run_all_release_surfaces() -> tuple[DemoSurfaceResult, ...]:
         run_standard_providers_demo(),
         run_tools_demo(),
         run_wasm_demo(),
-        run_gpu_rev3_demo(),
+        run_gpu_demo(),
         run_cuda_demo(),
     )
