@@ -17,10 +17,10 @@ public static class DslParserDemo
     /// [EN] Gets the deterministic demo value for <c>AllowedSteps</c>.
     /// [JA] <c>AllowedSteps</c> に対応する決定論的な Demo 値を取得します。
     /// </summary>
-    /// <param name="Ordinal">EN:  JA: Ordinal パラメーターです。
-    /// [EN] The demo value supplied for <c>Ordinal</c>.
-    /// [JA] <c>Ordinal</c> として渡される Demo 値です。
-    /// </param>
+    /// <remarks>
+    /// [EN] The set models the intentionally small DSL vocabulary used by the demo parser.
+    /// [JA] この set は demo parser が扱う意図的に小さい DSL vocabulary を表します。
+    /// </remarks>
     /// <returns>EN:  JA: 結果を返します。
     /// [EN] The deterministic result produced by this demo member.
     /// [JA] この Demo メンバーが生成する決定論的な結果です。

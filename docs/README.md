@@ -16,7 +16,7 @@ after the 0.1.x line stabilizes; Demo remains the learning path for those layers
 ## Cross-Repository Alignment
 
 Shared repository boundaries, 0.1.1.1 local NuGet versioning, the
-NuGet-only / no-PyPI rule for this validation line, and the v0.1.2
+NuGet-only / no-PyPI rule for this validation line, and the v0.1.3
 NuGet + PyPI release assumption are defined by
 [AIKernel Repository Alignment v0.1.1.1](https://github.com/AIKernel-NET/AIKernel.NET/blob/main/docs/development/repository-alignment-v0.1.1.1.md).
 When a change crosses repositories, start with the

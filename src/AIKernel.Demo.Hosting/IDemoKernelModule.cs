@@ -12,5 +12,13 @@ namespace AIKernel.Demo.Hosting;
 /// </remarks>
 public interface IDemoKernelModule
 {
+    /// <summary>
+    /// [EN] Registers the demo module services into the host dependency injection container.
+    /// [JA] demo module の service を host の dependency injection container に登録します。
+    /// </summary>
+    /// <param name="services">
+    /// [EN] The service collection that receives the module registrations.
+    /// [JA] module registration を受け取る service collection です。
+    /// </param>
     void Register(IServiceCollection services);
 }

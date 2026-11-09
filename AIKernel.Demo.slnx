@@ -2,6 +2,7 @@
   <Project Path="src/AIKernel.Demo.Console/AIKernel.Demo.Console.csproj" />
   <Project Path="src/AIKernel.Demo.WebApi/AIKernel.Demo.WebApi.csproj" />
   <Project Path="src/AIKernel.Demo.Wasm/AIKernel.Demo.Wasm.csproj" />
+  <Project Path="src/AIKernel.Demo.Gpu/AIKernel.Demo.Gpu.csproj" />
   <Project Path="src/AIKernel.Demo.Os/AIKernel.Demo.Os.csproj" />
   <Project Path="src/AIKernel.Demo.CoreRuntime/AIKernel.Demo.CoreRuntime.csproj" />
   <Project Path="src/AIKernel.Demo.Contracts/AIKernel.Demo.Contracts.csproj" />

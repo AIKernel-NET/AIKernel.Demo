@@ -15,7 +15,7 @@ Monolith は 0.1.x 系の安定化後に全 SDK layer を統合する標準 refe
 ## リポジトリ横断整合
 
 共有の repository boundary、0.1.1.1 local NuGet versioning、この検証ラインでの
-NuGet-only / no-PyPI rule、v0.1.2 の NuGet + PyPI release assumption は
+NuGet-only / no-PyPI rule、v0.1.3 の NuGet + PyPI release assumption は
 [AIKernel Repository Alignment v0.1.1.1](https://github.com/AIKernel-NET/AIKernel.NET/blob/main/docs/development/repository-alignment-v0.1.1.1-ja.md)
 で定義します。
 複数 repository をまたぐ変更を行う場合は、まず

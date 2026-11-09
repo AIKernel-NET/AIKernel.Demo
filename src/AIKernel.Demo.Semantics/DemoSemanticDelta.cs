@@ -40,7 +40,21 @@ public sealed record DemoSemanticDelta(
 /// </remarks>
 public enum DemoSemanticSlot
 {
+    /// <summary>
+    /// [EN] Describes semantic changes in orchestration and control-flow ordering.
+    /// [JA] orchestration と control-flow ordering に関する semantic change を表します。
+    /// </summary>
     Orchestration,
+
+    /// <summary>
+    /// [EN] Describes semantic changes in user-facing or DSL expression text.
+    /// [JA] user-facing text や DSL expression に関する semantic change を表します。
+    /// </summary>
     Expression,
+
+    /// <summary>
+    /// [EN] Describes semantic changes in generated artifacts, assets, or other material outputs.
+    /// [JA] generated artifact、asset、その他の material output に関する semantic change を表します。
+    /// </summary>
     Material
 }

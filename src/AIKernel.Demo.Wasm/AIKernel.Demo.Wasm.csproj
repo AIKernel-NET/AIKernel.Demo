@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
     <PackageReference Include="AIKernel.Abstractions" Version="$(AIKernelPackageVersion)" />
+    <PackageReference Include="AIKernel.Dtos" Version="$(AIKernelPackageVersion)" />
     <PackageReference Include="AIKernel.Wasm.Runtime" Version="[$(AIKernelWasmPackageVersion)]" />
     <PackageReference Include="AIKernel.Wasm.WebGpuComputeProvider" Version="[$(AIKernelWasmPackageVersion)]" />
   </ItemGroup>
