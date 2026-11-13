@@ -45,11 +45,14 @@ structured phase, select a provider, polish output, and write replay metadata.
 ## Run the API Demo
 
 ```powershell
-dotnet run --project src/AIKernel.Demo.WebApi/AIKernel.Demo.WebApi.csproj
+dotnet run --project src/AIKernel.Demo.WebApi/AIKernel.Demo.WebApi.csproj -c Release --no-build --no-launch-profile -- --urls http://127.0.0.1:5080
 ```
 
-The API host demonstrates an OpenAI-compatible endpoint implemented through
-AIKernel routing, PDP decisions, and replay headers.
+`GET /` redirects to `/demo/pipeline`, which returns a fixed JSON summary at
+`GET /demo/pipeline`. The summary contains sample policy and routing metadata;
+the host does not invoke providers or expose an OpenAI-compatible endpoint.
+See [Web API Demo](../../README.md#web-api-demo) for the request table, JSON
+response, limitations, and HTTP smoke test.
 
 ## Run OS Provider Examples
 
