@@ -33,9 +33,8 @@ Demo は利用者側です。Runtime execution engine は AIKernel.Control に�
 - `AIKernel.Demo.Console` - 1 回の inference pipeline を実行する最小 CLI demo。
   Kernel/Provider DI、`IInputNormalizer -> StructurePhase -> Provider ->
   OutputPolisher`、deterministic replay logging、Mock/OpenAI/Local provider 選択を扱います。
-- `AIKernel.Demo.WebApi` - `/v1/chat/completions` を AIKernel 経由で実装する
-  OpenAI-compatible API host demo。ProviderRouter、PDP Allow/Deny、ReplayLog HTTP
-  response headers を扱います。
+- `AIKernel.Demo.WebApi` - 固定のパイプライン要約を `GET /demo/pipeline` から
+  JSONで返す最小のASP.NET Coreホスト。[Web API Demo](#web-api-demo)を参照してください。
 - `AIKernel.Demo.Wasm` - Context、Execution、VFS 可視化、WebAssembly provider call、
   WebGPU CPU fallback、canonical GPU HUD / Aisthesis / spatial pass、
   DAG step animation、PromptRules signature verification の browser Playground。
@@ -96,6 +95,58 @@ dotnet run --project src/AIKernel.Demo.StandardProviders/AIKernel.Demo.StandardP
 ```
 
 共通 project property は `Directory.Build.props` に集約されています。
+
+## Web API Demo
+
+上記のReleaseビルド後、リポジトリのルートからホストを起動します。
+
+```powershell
+dotnet run --project src/AIKernel.Demo.WebApi/AIKernel.Demo.WebApi.csproj -c Release --no-build --no-launch-profile -- --urls http://127.0.0.1:5080
+```
+
+公開しているのは2つのGETルートです。各リクエストの応答は次のとおりです。
+
+| リクエスト | ステータス | 動作 |
+| --- | --- | --- |
+| `GET /` | `302` | `/demo/pipeline`へリダイレクトします。 |
+| `GET /demo/pipeline` | `200` | 下記の固定パイプライン要約をJSONで返します。 |
+| `POST /v1/chat/completions` | `404` | 未実装です。 |
+
+別のターミナルで要約を取得します。
+
+```powershell
+Invoke-RestMethod -Uri http://127.0.0.1:5080/demo/pipeline | ConvertTo-Json -Depth 5
+```
+
+```json
+{
+  "pipelineId": "demo.pipeline.default",
+  "decision": 0,
+  "contractAlignment": {
+    "routingProviderId": "demo.mock",
+    "routingModelId": "mock-fixed",
+    "dslRootType": "Pipeline",
+    "dslFirstStepName": "normalize"
+  },
+  "stepCount": 4,
+  "replay": "steps=4; hash=demo-rep"
+}
+```
+
+これは`DemoPipelineCatalog.CreateDefaultRun()`が生成する固定の教材データです。
+`decision: 0`はサンプルの`DemoPolicyCode.Allow`を表し、要求ごとのポリシー評価、
+プロバイダーへのルーティング、モデル推論は行いません。`replay`はJSON本文内のサンプル要約で、
+ReplayLogのHTTPヘッダーは付与しません。OpenAI互換ゲートウェイはDM4で別途扱います。
+ホストはCtrl+Cで停止します。
+
+日英READMEの応答例とビルド済みホストの整合は、次のコマンドで確認できます。
+
+```powershell
+python tests/webapi_docs_smoke.py
+```
+
+Python標準ライブラリだけを使い、テスト専用ホストをループバックの空きポートで起動して、
+検証後に停止します。上記のホストを別途起動しておく必要はありません。
 
 ## Demo Map の実行順
 

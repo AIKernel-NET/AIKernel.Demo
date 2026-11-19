@@ -42,9 +42,8 @@ Release notes:
   Kernel/Provider DI, `IInputNormalizer -> StructurePhase -> Provider ->
   OutputPolisher`, deterministic replay logging, and selectable Mock/OpenAI/Local
   providers.
-- `AIKernel.Demo.WebApi` - OpenAI-compatible API-host demo implementing
-  `/v1/chat/completions` through AIKernel, capability-based ProviderRouter
-  selection, PDP Allow/Deny, and ReplayLog HTTP response headers.
+- `AIKernel.Demo.WebApi` - minimal ASP.NET Core host exposing a fixed pipeline
+  summary as JSON at `GET /demo/pipeline`. See [Web API Demo](#web-api-demo).
 - `AIKernel.Demo.Wasm` - browser Playground for Context, Execution, VFS
   visualization, WebAssembly provider calls, WebGPU CPU fallback, canonical GPU
   canonical HUD/Aisthesis/spatial passes, DAG step animation, and PromptRules
@@ -118,6 +117,59 @@ dotnet run --project src/AIKernel.Demo.StandardProviders/AIKernel.Demo.StandardP
 ```
 
 Common project properties are centralized in `Directory.Build.props`.
+
+## Web API Demo
+
+After the Release build above, start the host from the repository root:
+
+```powershell
+dotnet run --project src/AIKernel.Demo.WebApi/AIKernel.Demo.WebApi.csproj -c Release --no-build --no-launch-profile -- --urls http://127.0.0.1:5080
+```
+
+The host exposes two GET routes. These requests produce the following responses:
+
+| Request | Status | Behavior |
+| --- | --- | --- |
+| `GET /` | `302` | Redirects to `/demo/pipeline`. |
+| `GET /demo/pipeline` | `200` | Returns the fixed pipeline summary below as JSON. |
+| `POST /v1/chat/completions` | `404` | Not implemented. |
+
+In another terminal, read the summary:
+
+```powershell
+Invoke-RestMethod -Uri http://127.0.0.1:5080/demo/pipeline | ConvertTo-Json -Depth 5
+```
+
+```json
+{
+  "pipelineId": "demo.pipeline.default",
+  "decision": 0,
+  "contractAlignment": {
+    "routingProviderId": "demo.mock",
+    "routingModelId": "mock-fixed",
+    "dslRootType": "Pipeline",
+    "dslFirstStepName": "normalize"
+  },
+  "stepCount": 4,
+  "replay": "steps=4; hash=demo-rep"
+}
+```
+
+This is fixed teaching data from `DemoPipelineCatalog.CreateDefaultRun()`.
+`decision: 0` represents the sample `DemoPolicyCode.Allow`; the host does not
+evaluate a request-specific policy, route a request to a provider, or run model
+inference. `replay` is a sample summary in the JSON body; the host does not add
+ReplayLog HTTP headers. An OpenAI-compatible gateway is separate work under DM4.
+Stop the host with Ctrl+C.
+
+To check both README response examples against the built host, run:
+
+```powershell
+python tests/webapi_docs_smoke.py
+```
+
+This standard-library Python test starts its own host on an ephemeral loopback
+port and stops it after the checks. It does not require the host above to be running.
 
 ## Run the Demo Map
 

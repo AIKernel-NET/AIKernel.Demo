@@ -46,11 +46,13 @@ output polish、replay metadata という最小 pipeline の形を確認でき�
 ## API Demo の実行
 
 ```powershell
-dotnet run --project src/AIKernel.Demo.WebApi/AIKernel.Demo.WebApi.csproj
+dotnet run --project src/AIKernel.Demo.WebApi/AIKernel.Demo.WebApi.csproj -c Release --no-build --no-launch-profile -- --urls http://127.0.0.1:5080
 ```
 
-API host は、AIKernel routing、PDP decision、replay header を通じて
-OpenAI-compatible endpoint を実装する例です。
+`GET /`は`/demo/pipeline`へリダイレクトし、`GET /demo/pipeline`は固定のJSON要約を返します。
+要約には教材用のポリシー・ルーティング情報が含まれますが、プロバイダーの呼出しや
+OpenAI互換エンドポイントの実装はありません。リクエスト一覧、JSON応答、制限事項、
+HTTPスモークテストは[Web API Demo](../../README-ja.md#web-api-demo)を参照してください。
 
 ## OS Provider Examples
 

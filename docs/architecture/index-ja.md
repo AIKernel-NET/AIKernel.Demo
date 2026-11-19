@@ -9,7 +9,8 @@ console、API host、browser-facing surface で Knowledge OS execution model を
 ## Initial Boundaries
 
 - Console: 1 つの deterministic inference pipeline の local smoke execution
-- WebApi: ProviderRouter と PDP を持つ OpenAI-compatible server / API host demo
+- WebApi: `GET /demo/pipeline`で固定のパイプライン要約を返し、`GET /`からリダイレクトする
+  ASP.NET Coreホスト。[Web API Demo](../../README-ja.md#web-api-demo)を参照。
 - Wasm: Context、Execution、VFS、DAG step、PromptRules signature check の
   browser-facing Playground
 - CoreRuntime: Core routing、capability registry、kernel clock、VFS、Hosting、

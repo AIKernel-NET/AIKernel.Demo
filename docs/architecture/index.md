@@ -9,7 +9,8 @@ the Knowledge OS execution model in console, API-host, and browser-facing forms.
 ## Initial Boundaries
 
 - Console: local smoke execution for one deterministic inference pipeline.
-- WebApi: OpenAI-compatible server/API host demo with ProviderRouter and PDP.
+- WebApi: ASP.NET Core host for a fixed pipeline summary at `GET /demo/pipeline`,
+  with a redirect from `GET /`. See [Web API Demo](../../README.md#web-api-demo).
 - Wasm: browser-facing Playground for Context, Execution, VFS, DAG steps, and
   PromptRules signature checks.
 - CoreRuntime: Core routing, capability registry, kernel clock, VFS, Hosting,
