@@ -226,8 +226,8 @@ spatial matrix order、offscreen HUD composition を public DTO 経由で検証�
 
 Demo の変更は、AIKernel 共通の開発規律に従ってください。
 
-- [AIKernel 開発ガイドライン](../AIKernel.NET/docs/guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES-jp.md)
-- [AIKernel Development Guidelines](../AIKernel.NET/docs/guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES.md)
+- [AIKernel 開発ガイドライン](https://github.com/AIKernel-NET/AIKernel.NET/blob/dev/docs/guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES-jp.md)
+- [AIKernel Development Guidelines](https://github.com/AIKernel-NET/AIKernel.NET/blob/dev/docs/guidelines/AIKERNEL_DEVELOPMENT_GUIDELINES.md)
 
 Demo は public contract の consumer に留め、internal runtime type へ依存せず、
 deterministic replay example を維持し、local validation で使用する package
