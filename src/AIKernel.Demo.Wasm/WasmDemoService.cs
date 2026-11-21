@@ -46,7 +46,8 @@ public sealed class WasmDemoService : Abstractions.IWasmDemoSurface
         var provider = new WasmProcessProvider();
         var process = await provider.CreateProcessAsync(
             "demo.wasm.process",
-            new WasmProcessOptions(ModuleBytes: [0x00, 0x61, 0x73, 0x6d]))
+            // A WebAssembly v1 module with no sections is sufficient for the lifecycle demo.
+            new WasmProcessOptions(ModuleBytes: [0x00, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00]))
             .ConfigureAwait(false);
 
         await process.StartAsync().ConfigureAwait(false);
