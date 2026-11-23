@@ -23,8 +23,7 @@ console、API host、browser-facing surface で Knowledge OS execution model を
   standard OS driver surface
 - Tools: instrumentation、canonical formatting、replay、inspector、ROM、clock、
   VFS helper surface
-- Cuda: Windows-native CUDA 13.0 descriptor / request dry-run。Windows 以外では
-  deterministic skip
+- Cuda: `AIKernel.Kernel` 同梱の CUDA Driver で VRAM との往復転送を検証。
 - Providers.Mock: contract と router demo のための deterministic Provider behavior
 - Vfs.Git: MaterialContext / RAG separation のための Git-backed VFS Provider boundary
 - Pipelines: Chat、RAG、Reasoning、Multi-step、Multi-model DAG examples
