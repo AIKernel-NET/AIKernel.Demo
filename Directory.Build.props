@@ -35,7 +35,5 @@
     <AIKernelToolsPackageVersion Condition="'$(UseLocalPackageVersion)' != 'true'">$(StablePackageVersion)</AIKernelToolsPackageVersion>
     <AIKernelControlPackageVersion Condition="'$(UseLocalPackageVersion)' == 'true'">$(LocalPackageVersionPrefix)-dev$(LocalPackageBuildNumber)</AIKernelControlPackageVersion>
     <AIKernelControlPackageVersion Condition="'$(UseLocalPackageVersion)' != 'true'">$(StablePackageVersion)</AIKernelControlPackageVersion>
-    <AIKernelCudaPackageVersion Condition="'$(UseLocalPackageVersion)' == 'true'">$(LocalPackageVersionPrefix)-dev$(LocalPackageBuildNumber)</AIKernelCudaPackageVersion>
-    <AIKernelCudaPackageVersion Condition="'$(UseLocalPackageVersion)' != 'true'">$(StablePackageVersion)</AIKernelCudaPackageVersion>
   </PropertyGroup>
 </Project>

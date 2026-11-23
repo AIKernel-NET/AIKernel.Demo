@@ -31,7 +31,7 @@ keeps external services behind package boundaries.
 | 5 | `AIKernel.Demo.Control` | Shows deterministic governance and emulator execution. |
 | 6 | `AIKernel.Demo.Tools` | Shows inspection, replay, canonical formatting, ROM, and export tooling. |
 | 7 | `AIKernel.Demo.Wasm` tests | Shows browser/WASM runtime contracts through deterministic test surfaces. |
-| 8 | `AIKernel.Demo.Cuda` | Shows CUDA package identity and request validation, with deterministic non-Windows skip. |
+| 8 | `AIKernel.Demo.Cuda` | Verify VRAM transfer using the bundled CUDA Driver on Windows x64 or Linux x64. |
 
 ## Run the Console Demo
 

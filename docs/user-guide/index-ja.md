@@ -32,7 +32,7 @@ AIKernel に初めて触れる場合は、次の順番で確認してくださ�
 | 5 | `AIKernel.Demo.Control` | deterministic governance と emulator execution の関係。 |
 | 6 | `AIKernel.Demo.Tools` | inspection、replay、canonical formatting、ROM、export tooling の役割。 |
 | 7 | `AIKernel.Demo.Wasm` tests | deterministic test surface を通じた browser / WASM runtime contract。 |
-| 8 | `AIKernel.Demo.Cuda` | CUDA package identity と request validation。非 Windows では deterministic skip。 |
+| 8 | `AIKernel.Demo.Cuda` | 同梱 CUDA Driver を使い、Windows x64 または Linux x64 で VRAM 転送を確認する。 |
 
 ## Console Demo の実行
 

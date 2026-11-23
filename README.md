@@ -68,8 +68,7 @@ Release notes:
   logging, event bus, network metadata, and profiler surfaces.
 - `AIKernel.Demo.Tools` - instrumentation, canonical formatting, replay,
   inspector, ROM, and export helper demo.
-- `AIKernel.Demo.Cuda` - Windows-native CUDA 13.0 dry-run demo with deterministic
-  skip outside Windows.
+- `AIKernel.Demo.Cuda` - VRAM round trip through the CUDA Driver bundled with `AIKernel.Kernel`.
 - `AIKernel.Demo.Providers.Mock` - deterministic mock Provider for contract
   tests, capability declarations such as chat/embedding, fixed responses, and
   ProviderRouter behavior checks.
@@ -186,7 +185,7 @@ OS-shaped runtime rather than as isolated samples.
 | 6 | `AIKernel.Demo.Tools` | How canonical formatting, inspection, replay, ROM, and export helpers support reproducible diagnostics. |
 | 7 | `AIKernel.Demo.Wasm` | How the browser/WASM runtime surface is tested through process lifecycle, deterministic WebGPU fallback paths, and canonical GPU HUD/Aisthesis/spatial passes. |
 | 8 | `AIKernel.Demo.Gpu` | How the canonical GPU pass vocabulary is exercised directly from a console demo without requiring browser GPU hardware. |
-| 9 | `AIKernel.Demo.Cuda` | How Windows-native CUDA package contracts are visible while non-Windows environments skip deterministically. |
+| 9 | `AIKernel.Demo.Cuda` | Verify a VRAM round trip on Windows x64 or Linux x64 with the NVIDIA driver. |
 
 Run the console demos in one pass:
 

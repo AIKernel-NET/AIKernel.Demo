@@ -1,28 +1,18 @@
 # AIKernel.Demo.Cuda
 
-Shows the CUDA 13.0 package through a guarded dry-run. The demo builds everywhere but only reports CUDA as runnable on Windows.
-
-Run:
+Verifies a GPU memory round trip using the CUDA Driver bundled with `AIKernel.Kernel` 0.1.4. The demo requires the NVIDIA driver and a CUDA-capable GPU on Windows x64 or Linux x64.
 
 ```powershell
 dotnet run --project src/AIKernel.Demo.Cuda/AIKernel.Demo.Cuda.csproj -c Release
 ```
 
-Expected log shape on Windows:
+The demo creates a CUDA context on device 0, uploads four bytes to VRAM, and compares the downloaded bytes with the original. A successful run prints:
 
 ```text
 AIKernel.Demo.Cuda
-status=dry-run
-capability=libtorch.llama.cuda13.0.libtorch2.12.win-x64
-request.valid=True
-cuda.map=LibTorchCapabilityInvoker,...
+status=ok
+backend=aikernel_cuda_driver
+roundtrip.bytes=4
 ```
 
-Expected log shape outside Windows:
-
-```text
-AIKernel.Demo.Cuda
-status=skipped
-reason=CUDA package is Windows native
-capability=libtorch.llama.cuda13.0.libtorch2.12.win-x64
-```
+An unsupported platform, a missing NVIDIA driver, or no available CUDA device produces `status=skipped` with the reason. Other CUDA errors and transfer mismatches cause the command to fail.

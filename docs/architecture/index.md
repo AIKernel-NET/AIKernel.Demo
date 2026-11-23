@@ -23,8 +23,7 @@ the Knowledge OS execution model in console, API-host, and browser-facing forms.
   network, event bus, and profiler.
 - Tools: instrumentation, canonical formatting, replay, inspector, ROM, clock,
   and VFS helper surfaces.
-- Cuda: Windows-native CUDA 13.0 descriptor/request dry-run with deterministic
-  non-Windows skip behavior.
+- Cuda: verifies a VRAM round trip through the CUDA Driver bundled with `AIKernel.Kernel`.
 - Providers.Mock: deterministic Provider behavior for contract and router demos.
 - Vfs.Git: Git-backed VFS Provider boundary for MaterialContext/RAG separation.
 - Pipelines: Chat, RAG, Reasoning, Multi-step, and Multi-model DAG examples.
